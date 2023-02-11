@@ -1,0 +1,26 @@
+%!TEX root = ../username.tex
+\chapter{Neural Network} \label{chap:neural_network}
+
+Instance segmentation algorithm group is a subgroup of the object detection algorithm group. All algorithms in the object detection group required to do two tasks. Those tasks are generate a bounding box surrounding each object in the image and clasify the object in each bounding box. We will first discuss the algorithm that have been use for this classification task. Since in each bounding box, there is exactly one object need to be classify, an algorithm from the image classification task, a subset of computer vision task, will be applied.
+
+% \hl{Conventional ML technique + limitation} \color{red} might put in the
+% first para of NN section \color{black}
+In the early day, a set of algorithms called machine-learning was proposed for the image classification task, but most were still designed manually by humans. Conventional machine-learning use feature extraction functions to map raw data to feature vector. The feature vector is the only suitable data that allow the learning subsystem of machine-learning to detect patterns and classify the input. For that reason, the accuracy and effectiveness of machine-learning method are heavily dependent on the feature extraction function. However, the feature extraction function's responsibility is to extract features unique to the object that the machine tries to detect. Thus, the function requires an extremely detailed design and immense domain expertise to extract the feature of one object. Another disadvantage is that each object requires a different feature extraction function as they have unique features. The variety in features between objects causes the engineer to redesign the entire machine-learning architecture for each object which is a difficult task and inefficient.
+
+% \hl{The paper outline}
+As more studies go into the field, we start to move away from the manually designed machine-leaning algorithm to a more data-driven model. This data-driven algorithm group is now known as the artificial neural network.
+
+% \hl{What is neural network}
+Neural networks, also known as artificial neural networks (ANNs), are inspired by the human brain architecture. Similar to the way the human brain processes and makes decisions, ANN is the core process of machine learning that gives the machine the ability to interpret the representation of raw binary data and move it toward artificial intelligence. An ANN algorithm is driven by data, the more data is feeded to the algorithm, the more accuracy its interpretation ability become.
+
+% \hl{Diff NN archietecture}
+At the highest level of abstraction of ANN, there exist two types of neural network architecture. The first and simpler one is feedforward architecture which only allows its signal to travel from input to output. The feedforward network is widely utilized in grid pattern processing tasks. The second architecture is the recurrent neural network (RNN). RNN expands the feedforward network's functionality by adding feedback connections that allow the network to feed its output back to the network. Feedback connections enable RNN to be sufficient for processing sequences of data tasks.
+
+% \hl{Hook to FC feedforward NN}
+As this paper's interest lies in detecting objects of a scene, which require classifying individual objects in a grid of pixel values, we will only discuss the detail of a fully connected feedforward neural network.
+
+\input{chapters/chapter1/feedforward_nn.tex}
+
+\input{chapters/chapter1/convolutional_nn.tex}
+
+\input{chapters/chapter1/section_2.3.tex}
