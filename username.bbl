@@ -525,6 +525,44 @@
       \field{title}{An introduction to convolutional neural networks}
       \field{year}{2015}
     \endentry
+    \entry{faster_rcnn_2015}{article}{}
+      \name{author}{4}{}{%
+        {{hash=bb295293acacd54387339079ebbe4ead}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Shaoqing},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kaiming},
+           giveni={K\bibinitperiod}}}%
+        {{hash=bd5dadbe57bedc5957c19a3154c4d424}{%
+           family={Girshick},
+           familyi={G\bibinitperiod},
+           given={Ross},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f85751488058842b5777c7b4074077b5}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f086ca4da3e532e8a41cb758ea461825}
+      \strng{fullhash}{008a132af3e2d4ff15eb01a8fb4b005c}
+      \strng{bibnamehash}{f086ca4da3e532e8a41cb758ea461825}
+      \strng{authorbibnamehash}{f086ca4da3e532e8a41cb758ea461825}
+      \strng{authornamehash}{f086ca4da3e532e8a41cb758ea461825}
+      \strng{authorfullhash}{008a132af3e2d4ff15eb01a8fb4b005c}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in neural information processing systems}
+      \field{title}{Faster r-cnn: Towards real-time object detection with region proposal networks}
+      \field{volume}{28}
+      \field{year}{2015}
+    \endentry
     \entry{vgg16_2014}{article}{}
       \name{author}{2}{}{%
         {{hash=9d16b7284df92c9adaee86c37ab992df}{%
@@ -642,7 +680,7 @@
       \verb https://doi.org/10.1007/978-3-540-77058-9_36
       \endverb
     \endentry
-    \entry{uijlings_selective_search_2013}{article}{}
+    \entry{selective_search_2013}{article}{}
       \name{author}{4}{}{%
         {{hash=a2a26b7c9394bda95e38d8bc1f68ddf8}{%
            family={Uijlings},

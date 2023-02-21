@@ -1,17 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'username.blg'
-[60] biber-darwin:340> INFO - === Mon Feb 20, 2023, 21:37:22
-[74] Biber.pm:418> INFO - Reading 'username.bcf'
-[160] Biber.pm:972> INFO - Found 19 citekeys in bib section 0
-[172] Biber.pm:4383> INFO - Processing section 0
-[182] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
-[183] bibtex.pm:1713> INFO - LaTeX decoding ...
-[204] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
-[325] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[325] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[326] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[326] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[343] bbl.pm:654> INFO - Writing 'username.bbl' with encoding 'UTF-8'
-[352] bbl.pm:757> INFO - Output to username.bbl
-[352] Biber.pm:130> WARN - legacy month field 'December' in entry 'He_2015_ICCV' is not an integer - this will probably not sort properly.
-[352] Biber.pm:132> INFO - WARNINGS: 1
+[79] biber-darwin:340> INFO - === Mon Feb 20, 2023, 22:36:55
+[94] Biber.pm:418> INFO - Reading 'username.bcf'
+[206] Biber.pm:972> INFO - Found 20 citekeys in bib section 0
+[221] Biber.pm:4383> INFO - Processing section 0
+[232] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
+[234] bibtex.pm:1713> INFO - LaTeX decoding ...
+[261] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
+[413] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[413] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[413] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[413] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[435] bbl.pm:654> INFO - Writing 'username.bbl' with encoding 'UTF-8'
+[448] bbl.pm:757> INFO - Output to username.bbl
+[448] Biber.pm:130> WARN - legacy month field 'December' in entry 'He_2015_ICCV' is not an integer - this will probably not sort properly.
+[448] Biber.pm:132> INFO - WARNINGS: 1
