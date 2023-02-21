@@ -3,15 +3,22 @@
 %% Created for Jon Breitenbucher at 2005-09-15 16:48:40 -0400 
 %% Saved with string encoding UTF-8 
 
-@article{AlexNet_2017,
-  title={Imagenet classification with deep convolutional neural networks},
-  author={Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
-  journal={Communications of the ACM},
-  volume={60},
-  number={6},
-  pages={84--90},
-  year={2017},
-  publisher={AcM New York, NY, USA}
+@inbook{2d_svm_Tzotsos,
+  author    = {Tzotsos, A.
+               and Argialas, D.},
+  editor    = {Blaschke, Thomas
+               and Lang, Stefan
+               and Hay, Geoffrey J.},
+  title     = {Support Vector Machine Classification for Object-Based Image Analysis},
+  booktitle = {Object-Based Image Analysis: Spatial Concepts for Knowledge-Driven Remote Sensing Applications},
+  year      = {2008},
+  publisher = {Springer Berlin Heidelberg},
+  address   = {Berlin, Heidelberg},
+  pages     = {663--677},
+  abstract  = {The Support Vector Machine is a theoretically superior machine learning methodology with great results in pattern recognition. Especially for supervised classification of high-dimensional datasets and has been found competitive with the best machine learning algorithms. In the past, SVMs were tested and evaluated only as pixel-based image classifiers. During recent years, advances in Remote Sensing occurred in the field of Object-Based Image Analysis (OBIA) with combination of low level and high level computer vision techniques. Moving from pixel-based techniques towards object-based representation, the dimensions of remote sensing imagery feature space increases significantly. This results to increased complexity of the classification process, and causes problems to traditional classification schemes. The objective of this study was to evaluate SVMs for their effectiveness and prospects for object-based image analysis as a modern computational intelligence method. Here, an SVM approach for multi-class classification was followed, based on primitive image objects provided by a multi-resolution segmentation algorithm. Then, a feature selection step took place in order to provide the features for classification which involved spectral, texture and shape information. After the feature selection step, a module that integrated an SVM classifier and the segmentation algorithm was developed in C++. For training the SVM, sample image objects derived from the segmentation procedure were used. The proposed classification procedure followed, resulting in the final object classification. The classification results were compared to the Nearest Neighbor object-based classifier results, and were found satisfactory. The SVM methodology seems very promising for Object Based Image Analysis and future work will focus on integrating SVM classifiers with rule-based classifiers.},
+  isbn      = {978-3-540-77058-9},
+  doi       = {10.1007/978-3-540-77058-9_36},
+  url       = {https://doi.org/10.1007/978-3-540-77058-9_36}
 }
 
 @misc{ahsan_2020,
@@ -24,6 +31,24 @@
   month     = {Jun}
 }
 
+@article{AlexNet_2017,
+  title     = {Imagenet classification with deep convolutional neural networks},
+  author    = {Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+  journal   = {Communications of the ACM},
+  volume    = {60},
+  number    = {6},
+  pages     = {84--90},
+  year      = {2017},
+  publisher = {AcM New York, NY, USA}
+}
+
+@article{vgg16_2014,
+  title={Very deep convolutional networks for large-scale image recognition},
+  author={Simonyan, Karen and Zisserman, Andrew},
+  journal={arXiv preprint arXiv:1409.1556},
+  year={2014}
+}
+
 @misc{analytics_vidhya_2021,
   title   = {Building resnet-34 model using Pytorch - A Guide for Beginners},
   url     = {https://www.analyticsvidhya.com/blog/2021/09/building-resnet-34-model-using-pytorch-a-guide-for-beginners/},
@@ -31,7 +56,7 @@
   journal = {Analytics Vidhya},
   year    = {2021},
   month   = {Sep}
-} 
+}
 
 @incollection{bengio2012practical,
   title     = {Practical recommendations for gradient-based training of deep architectures},
@@ -40,6 +65,14 @@
   pages     = {437--478},
   year      = {2012},
   publisher = {Springer}
+} 
+
+@inproceedings{fast_rcnn_og,
+  title     = {Fast r-cnn},
+  author    = {Girshick, Ross},
+  booktitle = {Proceedings of the IEEE international conference on computer vision},
+  pages     = {1440--1448},
+  year      = {2015}
 } 
 
 @article{felzenszwalb_huttenlocher_2004,

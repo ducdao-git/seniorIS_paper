@@ -124,6 +124,30 @@
       \verb 10.1023/b:visi.0000022288.19776.77
       \endverb
     \endentry
+    \entry{fast_rcnn_og}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=bd5dadbe57bedc5957c19a3154c4d424}{%
+           family={Girshick},
+           familyi={G\bibinitperiod},
+           given={Ross},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{bd5dadbe57bedc5957c19a3154c4d424}
+      \strng{fullhash}{bd5dadbe57bedc5957c19a3154c4d424}
+      \strng{bibnamehash}{bd5dadbe57bedc5957c19a3154c4d424}
+      \strng{authorbibnamehash}{bd5dadbe57bedc5957c19a3154c4d424}
+      \strng{authornamehash}{bd5dadbe57bedc5957c19a3154c4d424}
+      \strng{authorfullhash}{bd5dadbe57bedc5957c19a3154c4d424}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE international conference on computer vision}
+      \field{title}{Fast r-cnn}
+      \field{year}{2015}
+      \field{pages}{1440\bibrangedash 1448}
+      \range{pages}{9}
+    \endentry
     \entry{Girshick_R_CNN_2013}{article}{}
       \name{author}{4}{}{%
         {{hash=c2c60ceb4a241891e128295a5ae80aef}{%
@@ -501,6 +525,33 @@
       \field{title}{An introduction to convolutional neural networks}
       \field{year}{2015}
     \endentry
+    \entry{vgg16_2014}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9d16b7284df92c9adaee86c37ab992df}{%
+           family={Simonyan},
+           familyi={S\bibinitperiod},
+           given={Karen},
+           giveni={K\bibinitperiod}}}%
+        {{hash=c72fc39e94030f67717052309266a44d}{%
+           family={Zisserman},
+           familyi={Z\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{fullhash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{bibnamehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{authorbibnamehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{authornamehash}{25d2f3c4577a6632d37f0126cc781232}
+      \strng{authorfullhash}{25d2f3c4577a6632d37f0126cc781232}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1409.1556}
+      \field{title}{Very deep convolutional networks for large-scale image recognition}
+      \field{year}{2014}
+    \endentry
     \entry{taylor2017neural}{book}{}
       \name{author}{1}{}{%
         {{hash=5efe73c0ef8f0e873d520c4ea41f807e}{%
@@ -524,6 +575,72 @@
       \field{labeltitlesource}{title}
       \field{title}{Neural Networks: A visual introduction for beginners}
       \field{year}{2017}
+    \endentry
+    \entry{2d_svm_Tzotsos}{inbook}{}
+      \name{author}{2}{}{%
+        {{hash=17ad013530d4492ce88f2a0b198e68d4}{%
+           family={Tzotsos},
+           familyi={T\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cbb24318785f940d11886c8c5ea20ab5}{%
+           family={Argialas},
+           familyi={A\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=e52e987849436cae55c3929da2203ba4}{%
+           family={Blaschke},
+           familyi={B\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=2979075266629fa1d790fb7c7f4a940a}{%
+           family={Lang},
+           familyi={L\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cb4d727248c50247f2b7654ec3629ebf}{%
+           family={Hay},
+           familyi={H\bibinitperiod},
+           given={Geoffrey\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{5b4b26f6333c4c5d9c664e9a1c2b4a47}
+      \strng{fullhash}{5b4b26f6333c4c5d9c664e9a1c2b4a47}
+      \strng{bibnamehash}{5b4b26f6333c4c5d9c664e9a1c2b4a47}
+      \strng{authorbibnamehash}{5b4b26f6333c4c5d9c664e9a1c2b4a47}
+      \strng{authornamehash}{5b4b26f6333c4c5d9c664e9a1c2b4a47}
+      \strng{authorfullhash}{5b4b26f6333c4c5d9c664e9a1c2b4a47}
+      \strng{editorbibnamehash}{96cfa3bbd7a804f3561a7ff723da3480}
+      \strng{editornamehash}{96cfa3bbd7a804f3561a7ff723da3480}
+      \strng{editorfullhash}{96cfa3bbd7a804f3561a7ff723da3480}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Support Vector Machine is a theoretically superior machine learning methodology with great results in pattern recognition. Especially for supervised classification of high-dimensional datasets and has been found competitive with the best machine learning algorithms. In the past, SVMs were tested and evaluated only as pixel-based image classifiers. During recent years, advances in Remote Sensing occurred in the field of Object-Based Image Analysis (OBIA) with combination of low level and high level computer vision techniques. Moving from pixel-based techniques towards object-based representation, the dimensions of remote sensing imagery feature space increases significantly. This results to increased complexity of the classification process, and causes problems to traditional classification schemes. The objective of this study was to evaluate SVMs for their effectiveness and prospects for object-based image analysis as a modern computational intelligence method. Here, an SVM approach for multi-class classification was followed, based on primitive image objects provided by a multi-resolution segmentation algorithm. Then, a feature selection step took place in order to provide the features for classification which involved spectral, texture and shape information. After the feature selection step, a module that integrated an SVM classifier and the segmentation algorithm was developed in C++. For training the SVM, sample image objects derived from the segmentation procedure were used. The proposed classification procedure followed, resulting in the final object classification. The classification results were compared to the Nearest Neighbor object-based classifier results, and were found satisfactory. The SVM methodology seems very promising for Object Based Image Analysis and future work will focus on integrating SVM classifiers with rule-based classifiers.}
+      \field{booktitle}{Object-Based Image Analysis: Spatial Concepts for Knowledge-Driven Remote Sensing Applications}
+      \field{isbn}{978-3-540-77058-9}
+      \field{title}{Support Vector Machine Classification for Object-Based Image Analysis}
+      \field{year}{2008}
+      \field{pages}{663\bibrangedash 677}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1007/978-3-540-77058-9_36
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-540-77058-9_36
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-540-77058-9_36
+      \endverb
     \endentry
     \entry{uijlings_selective_search_2013}{article}{}
       \name{author}{4}{}{%

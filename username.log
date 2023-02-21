@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.24)  30 JAN 2023 12:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.24)  20 FEB 2023 21:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1356,7 +1356,7 @@ Package microtype Info: |<< adding left margin kern for `Th':
 Package microtype Info: |<< adding left margin kern for `Th':
 (microtype)             -0.31pt on input line 19.
 Package microtype Info: |<< adding left margin kern for `YO':
-(microtype)             -0.33pt on input line 23.
+(microtype)             -0.33pt on input line 24.
 )
 \tf@toc=\write8
 \openout8 = `username.toc'.
@@ -1384,7 +1384,7 @@ Package microtype Info: ... Loading protrusion list `ppl-sc-T1'.
 Package microtype Info: ... : First loading protrusion list `ppl-T1'.
 Package microtype Info: ... : First loading protrusion list `ppl-default'.
 Package microtype Info: ... Applying non-selected expansion (list `default').
-<figures/autonomous_driving_modular_pipeline.png, id=141, 990.70125pt x 278.03876pt>
+<figures/autonomous_driving_modular_pipeline.png, id=146, 990.70125pt x 278.03876pt>
 File: figures/autonomous_driving_modular_pipeline.png Graphic file (type png)
 <use figures/autonomous_driving_modular_pipeline.png>
 Package pdftex.def Info: figures/autonomous_driving_modular_pipeline.png  used on input line 14.
@@ -1413,7 +1413,7 @@ CHAPTER 2.
 [4
 
 ] (./chapters/chapter1/feedforward_nn.tex
-<figures/ffn_diagram.png, id=168, 2174.1225pt x 1166.3575pt>
+<figures/ffn_diagram.png, id=174, 2174.1225pt x 1166.3575pt>
 File: figures/ffn_diagram.png Graphic file (type png)
 <use figures/ffn_diagram.png>
 Package pdftex.def Info: figures/ffn_diagram.png  used on input line 5.
@@ -1425,12 +1425,12 @@ Package microtype Info: ... : First loading protrusion list `ppl-T1'.
 Package microtype Info: ... : First loading protrusion list `ppl-default'.
 Package microtype Info: ... Applying non-selected expansion (list `default').
  [6] [7]
-<figures/fp_diagram.png, id=200, 788.9475pt x 839.135pt>
+<figures/fp_diagram.png, id=205, 788.9475pt x 839.135pt>
 File: figures/fp_diagram.png Graphic file (type png)
 <use figures/fp_diagram.png>
 Package pdftex.def Info: figures/fp_diagram.png  used on input line 34.
 (pdftex.def)             Requested size: 144.54pt x 153.72665pt.
-<figures/acti_func_table.png, id=203, 1208.515pt x 1298.8525pt>
+<figures/acti_func_table.png, id=208, 1208.515pt x 1298.8525pt>
 File: figures/acti_func_table.png Graphic file (type png)
 <use figures/acti_func_table.png>
 Package pdftex.def Info: figures/acti_func_table.png  used on input line 48.
@@ -1459,7 +1459,7 @@ Package microtype Info: |<< adding left margin kern for `A':
 Package microtype Info: |<< adding left margin kern for `An':
 (microtype)             -0.39pt on input line 81.
  [12]
-<figures/simple_nn_gradient.png, id=243, 608.2725pt x 305.14pt>
+<figures/simple_nn_gradient.png, id=248, 608.2725pt x 305.14pt>
 File: figures/simple_nn_gradient.png Graphic file (type png)
 <use figures/simple_nn_gradient.png>
 Package pdftex.def Info: figures/simple_nn_gradient.png  used on input line 106.
@@ -1479,13 +1479,13 @@ Package microtype Info: |<< adding left margin kern for `(':
 Package microtype Info: |<< adding right margin kern for `)':
 (microtype)             -1.0pt on input line 142.
 ) (./chapters/chapter1/convolutional_nn.tex
-<figures/simple_cnn.png, id=266, 723.70375pt x 399.4925pt>
+<figures/simple_cnn.png, id=271, 723.70375pt x 399.4925pt>
 File: figures/simple_cnn.png Graphic file (type png)
 <use figures/simple_cnn.png>
 Package pdftex.def Info: figures/simple_cnn.png  used on input line 8.
 (pdftex.def)             Requested size: 325.215pt x 179.52003pt.
  [15] [16 <./figures/simple_cnn.png>]
-<figures/kernel_operation.png, id=282, 509.905pt x 507.8975pt>
+<figures/kernel_operation.png, id=287, 509.905pt x 507.8975pt>
 File: figures/kernel_operation.png Graphic file (type png)
 <use figures/kernel_operation.png>
 Package pdftex.def Info: figures/kernel_operation.png  used on input line 28.
@@ -1495,7 +1495,7 @@ Package microtype Info: |<< adding left margin kern for `(':
 (microtype)             -0.33pt on input line 43.
 Package microtype Info: |<< adding right margin kern for `)':
 (microtype)             -1.0pt on input line 43.
-<figures/max_pool.png, id=292, 342.27875pt x 202.7575pt>
+<figures/max_pool.png, id=297, 342.27875pt x 202.7575pt>
 File: figures/max_pool.png Graphic file (type png)
 <use figures/max_pool.png>
 Package pdftex.def Info: figures/max_pool.png  used on input line 50.
@@ -1508,23 +1508,41 @@ CHAPTER 3.
 CHAPTER 4.
 (./chapters/chapter3/rcnn.tex [23
 
-] [24] [25]
-<figures/alex_net.png, id=345, 1007.765pt x 329.23pt>
+]
+<figures/rcnn_archiet.png, id=334, 462.72874pt x 171.64125pt>
+File: figures/rcnn_archiet.png Graphic file (type png)
+<use figures/rcnn_archiet.png>
+Package pdftex.def Info: figures/rcnn_archiet.png  used on input line 9.
+(pdftex.def)             Requested size: 325.215pt x 120.63518pt.
+ [24 <./figures/rcnn_archiet.png>] [25] [26]
+<figures/alex_net.png, id=362, 1007.765pt x 329.23pt>
 File: figures/alex_net.png Graphic file (type png)
 <use figures/alex_net.png>
 Package pdftex.def Info: figures/alex_net.png  used on input line 46.
 (pdftex.def)             Requested size: 433.62pt x 141.66158pt.
- [26] [27 <./figures/alex_net.png>]) (./chapters/chapter3/fast_rcnn.tex) (./chapters/chapter3/faster_rcnn.tex) (./chapters/chapter3/mask_rcnn.tex)) (./chapters/chapter4.tex [28]
+ [27 <./figures/alex_net.png>]
+<figures/2d_svm.png, id=373, 558.085pt x 346.29375pt>
+File: figures/2d_svm.png Graphic file (type png)
+<use figures/2d_svm.png>
+Package pdftex.def Info: figures/2d_svm.png  used on input line 61.
+(pdftex.def)             Requested size: 232.94644pt x 144.54pt.
+ [28]) (./chapters/chapter3/fast_rcnn.tex [29 <./figures/2d_svm.png>]
+<figures/fast_rcnn_archiet.png, id=393, 589.20125pt x 242.9075pt>
+File: figures/fast_rcnn_archiet.png Graphic file (type png)
+<use figures/fast_rcnn_archiet.png>
+Package pdftex.def Info: figures/fast_rcnn_archiet.png  used on input line 9.
+(pdftex.def)             Requested size: 289.07999pt x 119.17767pt.
+ [30 <./figures/fast_rcnn_archiet.png>]) (./chapters/chapter3/faster_rcnn.tex) (./chapters/chapter3/mask_rcnn.tex)) (./chapters/chapter4.tex [31]
 CHAPTER 5.
-) (./chapters/chapter5.tex [29
+) (./chapters/chapter5.tex [32
 
 ]
 CHAPTER 6.
-) (./chapters/conclusion.tex [30
+) (./chapters/conclusion.tex [33
 
 ]
 CHAPTER 7.
-) [31
+) [34
 
 ]
 Package microtype Info: Setting up font `T1/pxr/m/it/10' on input line 273.
@@ -1544,29 +1562,29 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 Package microtype Info: ... : First loading protrusion list `default'.
 Package microtype Info: ... Applying non-selected expansion (list `default').
- [32
+ [35
 
 
-] [33] (./username.aux)
+] [36] (./username.aux)
 Package rerunfilecheck Info: File `username.out' has not changed.
-(rerunfilecheck)             Checksum: C1466AADAEBEA7CC0EED7186F4AE926E;3829.
+(rerunfilecheck)             Checksum: 7AB6188A59986AC663FC696512D59E6B;4019.
 Package logreq Info: Writing requests to 'username.run.xml'.
 \openout1 = `username.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36289 strings out of 478268
- 668747 string characters out of 5846347
- 1364789 words of memory out of 5000000
- 53328 multiletter control sequences out of 15000+600000
- 523341 words of font info for 385 fonts, out of 8000000 for 9000
+ 36362 strings out of 478268
+ 670468 string characters out of 5846347
+ 1366324 words of memory out of 5000000
+ 53374 multiletter control sequences out of 15000+600000
+ 523865 words of font info for 395 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,7n,94p,2157b,1569s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,7n,94p,2859b,1571s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/pxex.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/pxsy.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/pxsyb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/rpcxr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/rpxmi.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/rpxsc.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on username.pdf (34 pages, 1648218 bytes).
+Output written on username.pdf (37 pages, 1881643 bytes).
 PDF statistics:
- 498 PDF objects out of 1000 (max. 8388607)
- 409 compressed objects within 5 object streams
- 89 named destinations out of 1000 (max. 500000)
- 86274 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 555 PDF objects out of 1000 (max. 8388607)
+ 454 compressed objects within 5 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 86297 words of extra memory for PDF output out of 89155 (max. 10000000)
 
