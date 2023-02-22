@@ -1,17 +1,17 @@
 # Fdb version 3
-["biber username"] 1676950613 "username.bcf" "username.bbl" "username" 1676950724
-  "references.bib" 1676948414 14114 0d2144f1a6f24e8af7f1cd8d2bb309a5 ""
-  "username.bcf" 1676950724 111169 908049d25cf7c3802dd97945f03c75c5 "pdflatex"
+["biber username"] 1677097205 "username.bcf" "username.bbl" "username" 1677098811
+  "references.bib" 1676954821 14523 65061fcdb0b1898c6d2b40c7c8873741 ""
+  "username.bcf" 1677098811 111736 c5d5c005104a9a17951c2490b6ad55cc "pdflatex"
   (generated)
   "username.bbl"
   "username.blg"
-["makeindex username.idx"] 1676950613 "username.idx" "username.ind" "username" 1676950724
+["makeindex username.idx"] 1677097205 "username.idx" "username.ind" "username" 1677098811
   "username.idx" 0 -1 0 "pdflatex"
   (generated)
   "username.ilg"
   "username.ind"
-["pdflatex"] 1676950720 "/Users/dukedao/Documents/school_work/senior_is2/seniorIS_paper/username.tex" "username.pdf" "username" 1676950724
-  "/Users/dukedao/Documents/school_work/senior_is2/seniorIS_paper/username.tex" 1676946450 13947 b80b8abc9b79a72b56c01ce63c4b0ca9 ""
+["pdflatex"] 1677098807 "/Users/dukedao/Documents/school_work/senior_is2/seniorIS_paper/username.tex" "username.pdf" "username" 1677098812
+  "/Users/dukedao/Documents/school_work/senior_is2/seniorIS_paper/username.tex" 1677027624 13948 d272591f07e0e4303c941285d3d15bf2 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
@@ -251,7 +251,7 @@
   "chapters/chapter2.tex" 1674701545 3271 748108ba8e00ab54e2b3e75d955b6e18 ""
   "chapters/chapter3.tex" 1674742480 728 23fc1c683ea6f2f05b5b926a7117a93c ""
   "chapters/chapter3/fast_rcnn.tex" 1676950720 6105 d03c04b6ded26c897caa3e7cf25c073e ""
-  "chapters/chapter3/faster_rcnn.tex" 1676950520 1847 3fc00a5542575d69f1d3d2f9fe758932 ""
+  "chapters/chapter3/faster_rcnn.tex" 1677098807 7141 68e7b2d78fe04d65e767727fd2ac42a3 ""
   "chapters/chapter3/mask_rcnn.tex" 1676909366 20 b689c2ac9efdace064ce76f97342d827 ""
   "chapters/chapter3/rcnn.tex" 1676950576 17299 6f6da69771ec3203fef9e971b6d10cc9 ""
   "chapters/chapter4.tex" 1674742854 81 dcc82d1511b1722d92b679d737c73a55 ""
@@ -263,11 +263,13 @@
   "figures/alex_net.png" 1675041374 690822 6f0bb495f769d342431d7ff4ef20d711 ""
   "figures/autonomous_driving_modular_pipeline.png" 1669581151 190204 4791ce8c504c5b909f8eb7e2fd3088a2 ""
   "figures/fast_rcnn_archiet.png" 1676845831 147661 c394d2a7370a84d32752ee92f1c8b4f2 ""
+  "figures/faster_rcnn_archite.png" 1676955764 196285 ed0557bef6f1ddfbab17dd5f2107fa82 ""
   "figures/ffn_diagram.png" 1674697781 1038032 f4732fcebfb2fc2424e10fd343b2ce0a ""
   "figures/fp_diagram.png" 1674698274 336056 0d05a3d527e4e67b39a24e82990d923b ""
   "figures/kernel_operation.png" 1651856278 54784 d228641ff4a371dc09900fbf60b12225 ""
   "figures/max_pool.png" 1651868326 20802 aebfdce53a7437bb32dd3001ad8d1c38 ""
   "figures/rcnn_archiet.png" 1676842676 65027 fd2879133784a84d90a863c67689a2ff ""
+  "figures/rpn_anchor.png" 1677040521 90575 41e593d2d450c0d3f2b7dbbbb5c2b173 ""
   "figures/simple_cnn.png" 1651843811 39675 67c4dbe46a454dcc061f37ffe959dd1e ""
   "figures/simple_nn_gradient.png" 1651789082 58031 68bf1013ee745d06111b1292d8d09114 ""
   "styles/lshortwooster.sty" 1674629678 6572 c9711080e657f18f9d1b48d8e36b577d ""
@@ -275,13 +277,13 @@
   "styles/personal.tex" 1674629678 4969 4874ce4cd26aafd719e030f3abe9433e ""
   "styles/theorems.tex" 1674629678 2743 f404ad69d3fc5f67f2d89a87597f5fcc ""
   "styles/woofncychap.sty" 1674629678 4341 91a6891490daeb66cf9beee6a614c9ba ""
-  "username.aux" 1676950724 18609 d439a8582e519643c8bebd5663049435 "pdflatex"
-  "username.bbl" 1676950615 34782 eb4e47bed67fdddd15a91965adf9e6c9 "biber username"
+  "username.aux" 1677098811 20429 060b45b8b3024934eb14d49c49fa9cde "pdflatex"
+  "username.bbl" 1677097215 36834 05b9f7e52770ee4856cf8d180b728c6f "biber username"
   "username.ind" 0 -1 0 "makeindex username.idx"
-  "username.out" 1676950724 4019 7ab6188a59986ac663fc696512d59e6b "pdflatex"
-  "username.run.xml" 1676950724 2367 a6e0c33c3edfc6b63afdec72308a20ba "pdflatex"
-  "username.tex" 1676946450 13947 b80b8abc9b79a72b56c01ce63c4b0ca9 ""
-  "username.toc" 1676950724 2269 78ed9104de7834952348af0927d525e9 "pdflatex"
+  "username.out" 1677098811 4019 f13f32105b2fcb3fc50cad6c192f8b36 "pdflatex"
+  "username.run.xml" 1677098811 2367 a6e0c33c3edfc6b63afdec72308a20ba "pdflatex"
+  "username.tex" 1677027624 13948 d272591f07e0e4303c941285d3d15bf2 ""
+  "username.toc" 1677098811 2269 a533733b0c32f5b71d07637df486a134 "pdflatex"
   "woo10.clo" 1674629678 8248 95075d0b6fcbfe626dc62fb3069a7edb ""
   "woosterthesis.cls" 1674629678 53600 3cd3a5df4faf42cead09c20c46a5d2cf ""
   (generated)

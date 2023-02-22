@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.24)  20 FEB 2023 22:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.24)  22 FEB 2023 15:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1532,17 +1532,29 @@ File: figures/fast_rcnn_archiet.png Graphic file (type png)
 <use figures/fast_rcnn_archiet.png>
 Package pdftex.def Info: figures/fast_rcnn_archiet.png  used on input line 9.
 (pdftex.def)             Requested size: 289.07999pt x 119.17767pt.
- [30 <./figures/fast_rcnn_archiet.png>]) (./chapters/chapter3/faster_rcnn.tex [31]) (./chapters/chapter3/mask_rcnn.tex)) (./chapters/chapter4.tex [32]
+ [30 <./figures/fast_rcnn_archiet.png>]) (./chapters/chapter3/faster_rcnn.tex [31]
+<figures/faster_rcnn_archite.png, id=417, 876.27374pt x 350.30875pt>
+File: figures/faster_rcnn_archite.png Graphic file (type png)
+<use figures/faster_rcnn_archite.png>
+Package pdftex.def Info: figures/faster_rcnn_archite.png  used on input line 7.
+(pdftex.def)             Requested size: 361.34999pt x 144.45602pt.
+ [32 <./figures/faster_rcnn_archite.png>]
+<figures/rpn_anchor.png, id=429, 816.04875pt x 486.81876pt>
+File: figures/rpn_anchor.png Graphic file (type png)
+<use figures/rpn_anchor.png>
+Package pdftex.def Info: figures/rpn_anchor.png  used on input line 17.
+(pdftex.def)             Requested size: 216.81pt x 129.34062pt.
+ [33 <./figures/rpn_anchor.png>]) (./chapters/chapter3/mask_rcnn.tex)) (./chapters/chapter4.tex [34]
 CHAPTER 5.
-) (./chapters/chapter5.tex [33
+) (./chapters/chapter5.tex [35
 
 ]
 CHAPTER 6.
-) (./chapters/conclusion.tex [34
+) (./chapters/conclusion.tex [36
 
 ]
 CHAPTER 7.
-) [35
+) [37
 
 ]
 Package microtype Info: Setting up font `T1/pxr/m/it/10' on input line 273.
@@ -1562,29 +1574,29 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 Package microtype Info: ... : First loading protrusion list `default'.
 Package microtype Info: ... Applying non-selected expansion (list `default').
- [36
+ [38
 
 
-] [37] (./username.aux)
+] [39] (./username.aux)
 Package rerunfilecheck Info: File `username.out' has not changed.
-(rerunfilecheck)             Checksum: 7AB6188A59986AC663FC696512D59E6B;4019.
+(rerunfilecheck)             Checksum: F13F32105B2FCB3FC50CAD6C192F8B36;4019.
 Package logreq Info: Writing requests to 'username.run.xml'.
 \openout1 = `username.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36371 strings out of 478268
- 670712 string characters out of 5846347
- 1366446 words of memory out of 5000000
- 53381 multiletter control sequences out of 15000+600000
- 523865 words of font info for 395 fonts, out of 8000000 for 9000
+ 36410 strings out of 478268
+ 671681 string characters out of 5846347
+ 1366784 words of memory out of 5000000
+ 53401 multiletter control sequences out of 15000+600000
+ 524459 words of font info for 404 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,7n,94p,2903b,1571s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/pxex.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/pxsy.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/pxsyb.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/rpcxr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/rpxmi.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/rpxr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/pxfonts/rpxsc.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on username.pdf (38 pages, 1883088 bytes).
+Output written on username.pdf (40 pages, 2115513 bytes).
 PDF statistics:
- 566 PDF objects out of 1000 (max. 8388607)
- 464 compressed objects within 5 object streams
- 101 named destinations out of 1000 (max. 500000)
- 86297 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 595 PDF objects out of 1000 (max. 8388607)
+ 485 compressed objects within 5 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 86307 words of extra memory for PDF output out of 89155 (max. 10000000)
 

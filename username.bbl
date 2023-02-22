@@ -46,6 +46,58 @@
       \field{pages}{437\bibrangedash 478}
       \range{pages}{42}
     \endentry
+    \entry{faster_rcnn_architecture_fig}{article}{}
+      \name{author}{6}{}{%
+        {{hash=89bdc9c91535c4f66135aa01c958d313}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Zhipeng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=cb93ef065a08d9fb270d730ef20c158f}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Hao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=092d9899b19717a3bf02de83f2d979df}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Shilin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a8acacea1f7ebdbf841cdb5b071f92f6}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Juanping},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4e5711334d193458bdc191984d954eb2}{%
+           family={Lei},
+           familyi={L\bibinitperiod},
+           given={Lin},
+           giveni={L\bibinitperiod}}}%
+        {{hash=7be665f9479140d45da0310cbf0847f7}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={Huanxin},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{dbf6ffb1ec7211a0ec10b6c483d6bce3}
+      \strng{fullhash}{c522a76d167fd3eaa90a547fc6e8e462}
+      \strng{bibnamehash}{dbf6ffb1ec7211a0ec10b6c483d6bce3}
+      \strng{authorbibnamehash}{dbf6ffb1ec7211a0ec10b6c483d6bce3}
+      \strng{authornamehash}{dbf6ffb1ec7211a0ec10b6c483d6bce3}
+      \strng{authorfullhash}{c522a76d167fd3eaa90a547fc6e8e462}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ISPRS Journal of Photogrammetry and Remote Sensing}
+      \field{month}{05}
+      \field{title}{Multi-scale object detection in remote sensing imagery with convolutional neural networks}
+      \field{volume}{145}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.1016/j.isprsjprs.2018.04.003
+      \endverb
+    \endentry
     \entry{relu_optimization_2020}{misc}{}
       \name{author}{3}{}{%
         {{hash=2553df73cb4dd45b92fad7dc537ac9c6}{%

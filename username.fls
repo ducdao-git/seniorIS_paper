@@ -1516,6 +1516,16 @@ INPUT ./chapters/chapter3/faster_rcnn.tex
 INPUT chapters/chapter3/faster_rcnn.tex
 INPUT ./chapters/chapter3/faster_rcnn.tex
 INPUT chapters/chapter3/faster_rcnn.tex
+INPUT ./figures/faster_rcnn_archite.png
+INPUT ./figures/faster_rcnn_archite.png
+INPUT figures/faster_rcnn_archite.png
+INPUT ./figures/faster_rcnn_archite.png
+INPUT ./figures/faster_rcnn_archite.png
+INPUT ./figures/rpn_anchor.png
+INPUT ./figures/rpn_anchor.png
+INPUT figures/rpn_anchor.png
+INPUT ./figures/rpn_anchor.png
+INPUT ./figures/rpn_anchor.png
 INPUT ./chapters/chapter3/mask_rcnn.tex
 INPUT chapters/chapter3/mask_rcnn.tex
 INPUT ./chapters/chapter3/mask_rcnn.tex
