@@ -615,7 +615,7 @@
       \field{volume}{28}
       \field{year}{2015}
     \endentry
-    \entry{vgg16_2014}{article}{}
+    \entry{vgg16_2014}{misc}{}
       \name{author}{2}{}{%
         {{hash=9d16b7284df92c9adaee86c37ab992df}{%
            family={Simonyan},
@@ -628,6 +628,9 @@
            given={Andrew},
            giveni={A\bibinitperiod}}}%
       }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
       \strng{namehash}{25d2f3c4577a6632d37f0126cc781232}
       \strng{fullhash}{25d2f3c4577a6632d37f0126cc781232}
       \strng{bibnamehash}{25d2f3c4577a6632d37f0126cc781232}
@@ -638,9 +641,18 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{arXiv preprint arXiv:1409.1556}
-      \field{title}{Very deep convolutional networks for large-scale image recognition}
+      \field{title}{Very Deep Convolutional Networks for Large-Scale Image Recognition}
       \field{year}{2014}
+      \verb{doi}
+      \verb 10.48550/ARXIV.1409.1556
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1409.1556
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1409.1556
+      \endverb
+      \keyw{Computer Vision and Pattern Recognition (cs.CV),FOS: Computer and information sciences,FOS: Computer and information sciences}
     \endentry
     \entry{taylor2017neural}{book}{}
       \name{author}{1}{}{%
@@ -811,6 +823,53 @@
       \field{year}{2014}
       \field{pages}{818\bibrangedash 833}
       \range{pages}{16}
+    \endentry
+    \entry{deconv_rcnn_2018}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=25bbf4047d900f3760c65b01ee899dba}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=fe60bb0727ce58e66fe7ca638b4ab0ec}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Shihao},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c48821f5526e53925b229bf06537db1f}{%
+           family={Thachan},
+           familyi={T\bibinitperiod},
+           given={Sophanyouly},
+           giveni={S\bibinitperiod}}}%
+        {{hash=675ae4b023afdd52cef2b11fa0ff0dc4}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Jingzhou},
+           giveni={J\bibinitperiod}}}%
+        {{hash=76f7b7f6c000144f14684249d8e0ae3c}{%
+           family={Qian},
+           familyi={Q\bibinitperiod},
+           given={Yuntao},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{a88dfc5c55489606792d411cce65410b}
+      \strng{fullhash}{dd7384606df7138fe2a6634126e6d124}
+      \strng{bibnamehash}{a88dfc5c55489606792d411cce65410b}
+      \strng{authorbibnamehash}{a88dfc5c55489606792d411cce65410b}
+      \strng{authornamehash}{a88dfc5c55489606792d411cce65410b}
+      \strng{authorfullhash}{dd7384606df7138fe2a6634126e6d124}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IGARSS 2018-2018 IEEE International Geoscience and Remote Sensing Symposium}
+      \field{title}{Deconv R-CNN for small object detection on remote sensing images}
+      \field{year}{2018}
+      \field{pages}{2483\bibrangedash 2486}
+      \range{pages}{4}
     \endentry
   \enddatalist
 \endrefsection
