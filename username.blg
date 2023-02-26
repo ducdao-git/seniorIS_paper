@@ -1,19 +1,19 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'username.blg'
-[77] biber-darwin:340> INFO - === Sat Feb 25, 2023, 22:46:07
-[93] Biber.pm:418> INFO - Reading 'username.bcf'
-[211] Biber.pm:972> INFO - Found 26 citekeys in bib section 0
-[227] Biber.pm:4383> INFO - Processing section 0
-[237] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
-[240] bibtex.pm:1713> INFO - LaTeX decoding ...
-[273] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
-[453] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[453] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[453] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[453] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
-[481] bbl.pm:654> INFO - Writing 'username.bbl' with encoding 'UTF-8'
-[497] bbl.pm:757> INFO - Output to username.bbl
-[497] Biber.pm:130> WARN - legacy month field 'December' in entry 'He_2015_ICCV' is not an integer - this will probably not sort properly.
-[497] Biber.pm:130> WARN - legacy month field 'Feb' in entry 'rcnn_vari_flow_chart' is not an integer - this will probably not sort properly.
-[497] Biber.pm:130> WARN - legacy month field 'Jun' in entry 'rcnn_vs_faster_custom_fig' is not an integer - this will probably not sort properly.
-[497] Biber.pm:132> INFO - WARNINGS: 3
+[82] biber-darwin:340> INFO - === Sat Feb 25, 2023, 23:37:49
+[100] Biber.pm:418> INFO - Reading 'username.bcf'
+[215] Biber.pm:972> INFO - Found 26 citekeys in bib section 0
+[231] Biber.pm:4383> INFO - Processing section 0
+[243] Biber.pm:4574> INFO - Looking for bibtex file 'references.bib' for section 0
+[245] bibtex.pm:1713> INFO - LaTeX decoding ...
+[279] bibtex.pm:1518> INFO - Found BibTeX data source 'references.bib'
+[465] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[465] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[465] Biber.pm:4203> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[465] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[493] bbl.pm:654> INFO - Writing 'username.bbl' with encoding 'UTF-8'
+[509] bbl.pm:757> INFO - Output to username.bbl
+[509] Biber.pm:130> WARN - legacy month field 'December' in entry 'He_2015_ICCV' is not an integer - this will probably not sort properly.
+[509] Biber.pm:130> WARN - legacy month field 'Feb' in entry 'rcnn_vari_flow_chart' is not an integer - this will probably not sort properly.
+[509] Biber.pm:130> WARN - legacy month field 'Jun' in entry 'rcnn_vs_faster_custom_fig' is not an integer - this will probably not sort properly.
+[509] Biber.pm:132> INFO - WARNINGS: 3
