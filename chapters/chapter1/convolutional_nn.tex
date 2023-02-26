@@ -42,7 +42,7 @@ An the feature map size can be computed as follow:
     \text{feature size} = \left(\frac{(\text{image size} - \text{kernel size}) + 2 \times \text{padding size}}{\text{stride}} \right) + 1
 \end{equation}
 
-\subsection{Pooling Layer}
+\subsection{Pooling Layer} \label{subsec:pooling_layer}
 Unlike the convolutional layer, the pooling layer only has one purpose: reducing the number of neurons in the network. The use of the pooling layer help result in fewer parameters for the network and thus require less computational power. Similar to the kernel, the pooling layer also slide through a grid of value. However, instead of sliding through the input image, the pooling layer slides through the feature map or the convoluted image to reduce the size of the feature map. There are two types of pooling layers, and they are max-pool and average-pool. As the name suggested, a max-pool layer will extract the largest activation signal in a subregion of the feature map while removing all other activation signals in the same subregion. An example of a max-pool function is shown in Figure \ref{fig:max_pool_diagram}. On the other hand, an average-pool layer takes the average value of all the activation signals in the subregion. The choice of which pooling layer to use depends on whether we care about every feature in the image equally, then the average-pool is used, or if we only care about the more prominent feature, then max-pool is used. Pooling also uses the stride to change how big of the step the pooling layer will slide through the feature map, denoted $/x$ where $x$ is stride value.
 %
 \begin{figure}[!ht]

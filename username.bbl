@@ -330,6 +330,38 @@
       \field{title}{Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification}
       \field{year}{2015}
     \endentry
+    \entry{rcnn_vari_flow_chart}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6cfb5d2608616bce21708f853f01106e}{%
+           family={Hui},
+           familyi={H\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Medium}%
+      }
+      \strng{namehash}{6cfb5d2608616bce21708f853f01106e}
+      \strng{fullhash}{6cfb5d2608616bce21708f853f01106e}
+      \strng{bibnamehash}{6cfb5d2608616bce21708f853f01106e}
+      \strng{authorbibnamehash}{6cfb5d2608616bce21708f853f01106e}
+      \strng{authornamehash}{6cfb5d2608616bce21708f853f01106e}
+      \strng{authorfullhash}{6cfb5d2608616bce21708f853f01106e}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Medium}
+      \field{month}{2}
+      \field{title}{What do we learn from region based object detectors (faster R-CNN, R-FCN, FPN)?}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://jonathan-hui.medium.com/what-do-we-learn-from-region-based-object-detectors-faster-r-cnn-r-fcn-fpn-7e354377a7c9
+      \endverb
+      \verb{url}
+      \verb https://jonathan-hui.medium.com/what-do-we-learn-from-region-based-object-detectors-faster-r-cnn-r-fcn-fpn-7e354377a7c9
+      \endverb
+    \endentry
     \entry{AlexNet_2017}{article}{}
       \name{author}{3}{}{%
         {{hash=c5e3a676e2ac1164b3afcd539c131fc9}{%
@@ -577,6 +609,21 @@
       \field{title}{An introduction to convolutional neural networks}
       \field{year}{2015}
     \endentry
+    \entry{rcnn_vs_faster_custom_fig}{misc}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Amir Masoud Sefidian}
+      \field{month}{6}
+      \field{title}{RCNN, fast RCNN, and faster RCNN algorithms for object detection explained}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb http://www.sefidian.com/2020/01/13/rcnn-fast-rcnn-and-faster-rcnn-for-object-detection-explained/
+      \endverb
+      \verb{url}
+      \verb http://www.sefidian.com/2020/01/13/rcnn-fast-rcnn-and-faster-rcnn-for-object-detection-explained/
+      \endverb
+    \endentry
     \entry{faster_rcnn_2015}{article}{}
       \name{author}{4}{}{%
         {{hash=bb295293acacd54387339079ebbe4ead}{%
@@ -653,6 +700,40 @@
       \verb https://arxiv.org/abs/1409.1556
       \endverb
       \keyw{Computer Vision and Pattern Recognition (cs.CV),FOS: Computer and information sciences,FOS: Computer and information sciences}
+    \endentry
+    \entry{vgg16_architect_2014}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c5292805b008d67a1afec946c21f7357}{%
+           family={Sugata},
+           familyi={S\bibinitperiod},
+           given={T},
+           giveni={T\bibinitperiod}}}%
+        {{hash=8a9ab49f0fe827e25142df0f1ec23209}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={C},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{dac0748bb3fbea6ccc6d13968bb5aa6a}
+      \strng{fullhash}{dac0748bb3fbea6ccc6d13968bb5aa6a}
+      \strng{bibnamehash}{dac0748bb3fbea6ccc6d13968bb5aa6a}
+      \strng{authorbibnamehash}{dac0748bb3fbea6ccc6d13968bb5aa6a}
+      \strng{authornamehash}{dac0748bb3fbea6ccc6d13968bb5aa6a}
+      \strng{authorfullhash}{dac0748bb3fbea6ccc6d13968bb5aa6a}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IOP Conference Series: Materials Science and Engineering}
+      \field{month}{11}
+      \field{title}{Leaf App: Leaf recognition with deep convolutional neural networks}
+      \field{volume}{273}
+      \field{year}{2017}
+      \field{pages}{012004}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1757-899X/273/1/012004
+      \endverb
     \endentry
     \entry{taylor2017neural}{book}{}
       \name{author}{1}{}{%
@@ -789,6 +870,19 @@
       \range{pages}{18}
       \verb{doi}
       \verb 10.1007/s11263-013-0620-5
+      \endverb
+    \endentry
+    \entry{roi_pooling_problem}{misc}{}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Understanding Region of Interest (RoI Pooling) - Blog by Kemal Erdem}
+      \field{title}{Understanding region of interest (roi pooling)}
+      \verb{urlraw}
+      \verb https://erdem.pl/2020/02/understanding-region-of-interest-ro-i-pooling
+      \endverb
+      \verb{url}
+      \verb https://erdem.pl/2020/02/understanding-region-of-interest-ro-i-pooling
       \endverb
     \endentry
     \entry{zeiler2014visualizing}{inproceedings}{}

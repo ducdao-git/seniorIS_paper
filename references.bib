@@ -19,7 +19,7 @@
   isbn      = {978-3-540-77058-9},
   doi       = {10.1007/978-3-540-77058-9_36},
   url       = {https://doi.org/10.1007/978-3-540-77058-9_36}
-}
+} 
 
 @misc{ahsan_2020,
   title     = {Convolutional neural network and regularization techniques with TensorFlow and keras},
@@ -51,7 +51,6 @@
   month   = {Sep}
 }
 
-
 @incollection{bengio2012practical,
   title     = {Practical recommendations for gradient-based training of deep architectures},
   author    = {Bengio, Yoshua},
@@ -60,6 +59,16 @@
   year      = {2012},
   publisher = {Springer}
 }
+
+@inproceedings{deconv_rcnn_2018,
+  title        = {Deconv R-CNN for small object detection on remote sensing images},
+  author       = {Zhang, Wei and Wang, Shihao and Thachan, Sophanyouly and Chen, Jingzhou and Qian, Yuntao},
+  booktitle    = {IGARSS 2018-2018 IEEE International Geoscience and Remote Sensing Symposium},
+  pages        = {2483--2486},
+  year         = {2018},
+  organization = {IEEE}
+}
+
 
 @inproceedings{fast_rcnn_og,
   title     = {Fast r-cnn},
@@ -97,7 +106,7 @@
   author  = {Felzenszwalb, Pedro F. and Huttenlocher, Daniel P.},
   year    = {2004},
   pages   = {167-181}
-} 
+}
 
 @article{Girshick_R_CNN_2013,
   author     = {Ross B. Girshick and Jeff Donahue and Trevor Darrell and Jitendra Malik},
@@ -111,7 +120,7 @@
   timestamp  = {Mon, 13 Aug 2018 16:48:09 +0200},
   biburl     = {https://dblp.org/rec/journals/corr/GirshickDDM13.bib},
   bibsource  = {dblp computer science bibliography, https://dblp.org}
-} 
+}
 
 @article{grigorescu_trasnea_cocias_macesanu_2020,
   title   = {A survey of Deep Learning techniques for autonomous driving},
@@ -138,7 +147,7 @@
   booktitle = {Proceedings of the IEEE conference on computer vision and pattern recognition},
   pages     = {4700--4708},
   year      = {2017}
-}
+} 
 
 @incollection{lecun2012efficient,
   title     = {Efficient backprop},
@@ -148,7 +157,7 @@
   year      = {2012},
   publisher = {Springer},
   annote    = {The paper proposes a Convolutional Neural Network (CNN) model called DenseNet. The idea of this model is that it connects each layer directly to every other layer in the network. This model inspires by the fact that CNN needs shorter paths from the input layer to the output layer. This need is due to the problem of input and gradient information lost as it travels through a deep network. Since all layers are directly connected, this model preserved the state after each layer and the original input information. All information is available until the final classifier, thus making this network data lost proof.}
-}
+} 
 
 @article{lecun2015deep,
   title     = {Deep learning},
@@ -192,6 +201,24 @@
   year    = {2015}
 }
 
+@misc{rcnn_vari_flow_chart,
+  title     = {What do we learn from region based object detectors (faster R-CNN, R-FCN, FPN)?},
+  url       = {https://jonathan-hui.medium.com/what-do-we-learn-from-region-based-object-detectors-faster-r-cnn-r-fcn-fpn-7e354377a7c9},
+  journal   = {Medium},
+  publisher = {Medium},
+  author    = {Hui, Jonathan},
+  year      = {2019},
+  month     = {Feb}
+}
+
+@misc{rcnn_vs_faster_custom_fig,
+  title   = {RCNN, fast RCNN, and faster RCNN algorithms for object detection explained},
+  url     = {http://www.sefidian.com/2020/01/13/rcnn-fast-rcnn-and-faster-rcnn-for-object-detection-explained/},
+  journal = {Amir Masoud Sefidian},
+  year    = {2022},
+  month   = {Jun}
+}
+
 @misc{relu_optimization_2020,
   doi       = {10.48550/ARXIV.2006.06878},
   url       = {https://arxiv.org/abs/2006.06878},
@@ -201,6 +228,12 @@
   publisher = {arXiv},
   year      = {2020},
   copyright = {arXiv.org perpetual, non-exclusive license}
+}
+
+@misc{roi_pooling_problem,
+  title   = {Understanding region of interest (roi pooling)},
+  url     = {https://erdem.pl/2020/02/understanding-region-of-interest-ro-i-pooling},
+  journal = {Understanding Region of Interest (RoI Pooling) - Blog by Kemal Erdem}
 }
 
 @article{selective_search_2013,
@@ -213,6 +246,17 @@
   year    = {2013},
   pages   = {154-171},
   annote  = {This paper proposes a region proposal algorithm named selective search. In the object detection task, the algorithm must be able to detect the location of the object at different scales. These objects' location is called the region of interest. Selective search is an algorithm that proposes potential regions of interest in an image. It is an efficient method for generating a large number of possible regions from an image, which can then be used as input for object recognition systems. The algorithm works by considering different segmentations of the image and then assigning a score to each one based on the similarity of its pixels, color, texture, and size. Some segmentations can then be merged if they have a high similarity score with each other. In addition to providing multiple proposals per image, selective search also benefits from being computationally efficient: compared to some other algorithms, it requires significantly fewer operations per proposal compared to those generated by slower methods such as sliding window approaches. Furthermore, since this approach does not require pre-training or manually labeling data, it can be quickly adapted to solve a wide range of problems with minimal effort on the part of the user.}
+} 
+
+@incollection{spatial_pyramid_pooling_2014,
+  doi       = {10.1007/978-3-319-10578-9_23},
+  url       = {https://doi.org/10.1007%2F978-3-319-10578-9_23},
+  year      = 2014,
+  publisher = {Springer International Publishing},
+  pages     = {346--361},
+  author    = {Kaiming He and Xiangyu Zhang and Shaoqing Ren and Jian Sun},
+  title     = {Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition},
+  booktitle = {Computer Vision {\textendash} {ECCV} 2014}
 }
 
 @book{taylor2017neural,
@@ -233,13 +277,15 @@
   copyright = {arXiv.org perpetual, non-exclusive license}
 }
 
-@inproceedings{deconv_rcnn_2018,
-  title={Deconv R-CNN for small object detection on remote sensing images},
-  author={Zhang, Wei and Wang, Shihao and Thachan, Sophanyouly and Chen, Jingzhou and Qian, Yuntao},
-  booktitle={IGARSS 2018-2018 IEEE International Geoscience and Remote Sensing Symposium},
-  pages={2483--2486},
-  year={2018},
-  organization={IEEE}
+@article{vgg16_architect_2014,
+  author  = {Sugata, T and Yang, C},
+  year    = {2017},
+  month   = {11},
+  pages   = {012004},
+  title   = {Leaf App: Leaf recognition with deep convolutional neural networks},
+  volume  = {273},
+  journal = {IOP Conference Series: Materials Science and Engineering},
+  doi     = {10.1088/1757-899X/273/1/012004}
 }
 
 @article{wang2019development,
