@@ -21,7 +21,10 @@
 \contentsline {section}{\numberline {4.2}Fast R-CNN}{30}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Faster R-CNN}{36}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Mask R-CNN}{40}{section.4.4}%
-\contentsline {chapter}{\numberline {5}YOLO Variation}{41}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Evaluation}{42}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{43}{chapter.7}%
-\contentsline {chapter}{References}{44}{appendix*.20}%
+\contentsline {subsection}{\numberline {4.4.1}The Backbone Convolutional Neural Network}{41}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}The RoIAlign Layer}{42}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}The Mask Branch}{44}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {5}YOLO Variation}{49}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Evaluation}{50}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion}{51}{chapter.7}%
+\contentsline {chapter}{References}{52}{appendix*.28}%

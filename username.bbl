@@ -292,6 +292,46 @@
       \verb 10.1002/rob.21918
       \endverb
     \endentry
+    \entry{resnet_2016}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kaiming},
+           giveni={K\bibinitperiod}}}%
+        {{hash=5e72bc22dbcf0984c6d113d280e36990}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiangyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=bb295293acacd54387339079ebbe4ead}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Shaoqing},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f85751488058842b5777c7b4074077b5}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{fullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{bibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorbibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorfullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \field{extraname}{1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE conference on computer vision and pattern recognition}
+      \field{title}{Deep residual learning for image recognition}
+      \field{year}{2016}
+      \field{pages}{770\bibrangedash 778}
+      \range{pages}{9}
+    \endentry
     \entry{He_2015_ICCV}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
@@ -321,6 +361,7 @@
       \strng{authorbibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
       \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
       \strng{authorfullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \field{extraname}{2}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
@@ -361,6 +402,43 @@
       \verb{url}
       \verb https://jonathan-hui.medium.com/what-do-we-learn-from-region-based-object-detectors-faster-r-cnn-r-fcn-fpn-7e354377a7c9
       \endverb
+    \endentry
+    \entry{transposed_convolution_layer_2016}{article}{}
+      \name{author}{4}{}{%
+        {{hash=ad00347757c889840894edff045da76c}{%
+           family={Im},
+           familyi={I\bibinitperiod},
+           given={Daniel\bibnamedelima Jiwoong},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=92f8578523595afd3cae84e0f479fe2f}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Chris\bibnamedelima Dongjoo},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=bb419d444235494b58481c9171c8e164}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=af42e70923af46b7688226711da549d7}{%
+           family={Memisevic},
+           familyi={M\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{8cd105f3ba6f4e813502a528bdae9cd3}
+      \strng{fullhash}{7dccd5b50abeaf4cd4aeb89e4b501a12}
+      \strng{bibnamehash}{8cd105f3ba6f4e813502a528bdae9cd3}
+      \strng{authorbibnamehash}{8cd105f3ba6f4e813502a528bdae9cd3}
+      \strng{authornamehash}{8cd105f3ba6f4e813502a528bdae9cd3}
+      \strng{authorfullhash}{7dccd5b50abeaf4cd4aeb89e4b501a12}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1602.05110}
+      \field{title}{Generating images with recurrent adversarial networks}
+      \field{year}{2016}
     \endentry
     \entry{AlexNet_2017}{article}{}
       \name{author}{3}{}{%
@@ -608,6 +686,50 @@
       \field{journaltitle}{arXiv preprint arXiv:1511.08458}
       \field{title}{An introduction to convolutional neural networks}
       \field{year}{2015}
+    \endentry
+    \entry{fcn_archite_2018}{article}{}
+      \name{author}{4}{}{%
+        {{hash=4c91280673390bc1595b9763e95077dc}{%
+           family={Piramanayagam},
+           familyi={P\bibinitperiod},
+           given={Sankaranarayanan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=209f7cb22d4187a3edff6168a3ca171b}{%
+           family={Saber},
+           familyi={S\bibinitperiod},
+           given={Eli},
+           giveni={E\bibinitperiod}}}%
+        {{hash=2e2a4380d520ec8da1ca769b099ccfdb}{%
+           family={Schwartzkopf},
+           familyi={S\bibinitperiod},
+           given={Wade},
+           giveni={W\bibinitperiod}}}%
+        {{hash=b11a196635609c312c0e890e5fe93b2e}{%
+           family={Koehler},
+           familyi={K\bibinitperiod},
+           given={Frederick},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{0a3b3a7ca500d3105c08ec10b8ea445c}
+      \strng{fullhash}{eee13a340c0efd029b50f61cbbd3c9c0}
+      \strng{bibnamehash}{0a3b3a7ca500d3105c08ec10b8ea445c}
+      \strng{authorbibnamehash}{0a3b3a7ca500d3105c08ec10b8ea445c}
+      \strng{authornamehash}{0a3b3a7ca500d3105c08ec10b8ea445c}
+      \strng{authorfullhash}{eee13a340c0efd029b50f61cbbd3c9c0}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Remote Sensing}
+      \field{month}{09}
+      \field{title}{Supervised Classification of Multisensor Remotely Sensed Images Using a Deep Learning Framework}
+      \field{volume}{10}
+      \field{year}{2018}
+      \field{pages}{1429}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/rs10091429
+      \endverb
     \endentry
     \entry{rcnn_vs_faster_custom_fig}{misc}{}
       \field{sortinit}{R}
