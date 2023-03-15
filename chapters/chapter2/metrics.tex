@@ -1,0 +1,133 @@
+\section{Evaluation Metrics}  \label{sec:eval_metrics}
+
+As previously mentioned, an object detection model is responsible for localizing and classifying objects in an image by predicting a bounding box for each object and assigning a class label. Therefore, to evaluate the performance of an object detection model, the accuracy of the predicted bounding box and the given class label must be evaluated. Similarly, while evaluating an instance segmentation model, it is critical to analyze the quality of the pixel-wise mask in addition to the bounding box and category label. As a result, in this section, we will go over the metrics used to assess the accuracy of the bounding box, category label, and pixel-wise mask.
+
+We start by discussing the evaluation metric for bounding box accuracy in the object detection task. In this task, the model predicts a bounding box for each object in the image to describe the object's location and size. The bounding boxes are commonly represented as a tuple $(x_{min},\ y_{min},\ x_{max},\ y_{max})$ indicating the coordinates of the top-left and bottom-right corners of the box. To evaluate the accuracy of the predicted bounding box, we compare its coordinates with the coordinate of a ground-truth bounding box. Each ground-truth bounding box is a manually annotated rectangle that precisely encloses an object in the image or video frame. With the ground-truth boxes, \textbf{Intersection over Union (IoU)}, also known as the Jaccard index or Jaccard similarity coefﬁcient, the metric for measuring the degree of overlap between the predicted bounding box and the ground-truth bounding box for a given object \cite{generalized_iou}. In other words, given two rectangles represent the predicted bounding box and the ground-truth box, then the IoU can be expressed as:
+\begin{equation}
+    \text{IoU} = \frac{Area(BB_p \cap BB_t)}{Area(BB_p \cup BB_t)} \label{eq:iou}
+\end{equation}
+where $BB_p$ is the predicted bounding box, and $BB_t$ is the ground-truth bounding box. The IoU metric is defined in the range [0, 1], where a value closer to 0 indicates no overlap between bounding boxes, and 1 indicates a perfect overlap. Since $Area_{rectangle} = height \times width$, by comparing the area of two rectangles, the IoU metric incorporates the size and aspect ratio of the two boxes in comparison. As a result, the IoU metric is invariant to the size and aspect ratio. Due to its simplicity and invariance properties, IoU is widely used to measure the accuracy of predicted bounding boxes in various computer vision tasks \cite{generalized_iou}. Despite its success as a metric, IoU has a major weakness that prevents it from being used as a loss function. As shown in Equation \ref{eq:iou}, we noted that as long as the overlapping area is 0, i.e., $Area(BB_p \cap BB_t) = 0$, then IoU will be 0. In other words, when the predicted and ground-truth bounding boxes are not overlapping, the resulting IoU score does not indicate whether they are near or far from each other. The Generalized Intersection over Union (GIoU) was proposed to resolve this issue, as described in \cite{generalized_iou}.
+
+Next, we can assess the model's accuracy in classifying the object within each bounding box. Each bounding box requires the model to predict a categorical label and a confidence score. The label denotes the object's class within the bounding box, and the score reflects the model's confidence in identifying the object as belonging to this class. To assess the model's accuracy, we compare the predicted bounding box label with the ground-truth bounding box label. Before comparing the predicted box and ground-truth box labels, it is crucial to require that the degree of overlap between them meets a certain threshold $t_{IoU}$. If IoU $\geq t_{IoU}$, the detection is considered as a positive sample, whereas if IoU $< t_{IoU}$, the detection is considered as a negative sample. For each positive sample, we check if the model's confidence is higher than a predetermined threshold, $t_{confidence}$. If the confidence score meets the threshold, we compare the predicted label with the ground-truth label. Conversely, the comparison will result in a false if a bounding box is classified as a negative sample or has a confidence score lower than $t_{confidence}$. Therefore, to correctly classify a predicted bounding box, the model must satisfy three conditions: (1) the IoU score $\geq t_{IoU}$, (2) the confidence score $\geq t_{confidence}$, and (3) the predicted label matches the ground-truth label. If any of these conditions are not met, the model has incorrectly classified the predicted box.
+
+The first condition (IoU score $\geq t_{IoU}$) is required because, assuming the second and third conditions are met, if the predicted bounding box and the ground-truth bounding box have little or no overlap, then the prediction should be considered false, and the model's accuracy should be reduced. The value of $t_{IoU}$ depends heavily on the task the model tries to accomplish. For tasks that require absolute precision, such as human surgery assistance, $t_{IoU}$ should be set high. However, a much lower threshold is more forgiving for tasks like checking the presence of a glass of water on the table. For evaluating the overall performance of the model, a $t_{IoU}$ value of 0.5 can be used, as demonstrated in the PASCAL VOC benchmark \cite{pascal_voc_2015}. Alternatively, the model can be evaluated at each $t_{IoU} \in { 0.50, 0.55, ..., 0.95}$, as shown in the COCO benchmark \cite{coco_2014}. On the other hand, the second condition (confidence score $\geq t_{confidence}$) is necessary because the score directly affects the model's behavior in predicting accurately versus finding all occurrences. This behavior is denoted as the tradeoff between precision and recall, which we will discuss later in this section.
+
+As an example, consider an image with 3 cars and 1 human. After processing the image with our object detection model, 2 cars and 1 human are identified with confidence scores of 0.76, 0.72, and 0.58, and IoU scores of 0.89, 0.32, and 0.52, respectively. The results are shown in the following table:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{rcccc}
+        ground-truth labels         & car  & car  & car  & human \\ \hline
+        predicted labels            & car  & car  & none & human \\ \hline
+        predicted confidence scores & 0.76 & 0.72 & 0    & 0.58  \\ \hline
+        predicted IoU scores        & 0.89 & 0.32 & 0    & 0.52 
+    \end{tabular}
+    \caption{Example's representation: Input image contains 3 cars and 1 human. The model predicts 2 cars and 1 human with respective confidence scores of 0.76, 0.72, and 0.58, and IoU scores of 0.89, 0.32, and 0.52} \label{ex:truth_pred_score_map}
+\end{table}
+
+\noindent Assuming the threshold $t_{IoU}=0.5$ and $t_{confidence}=0.2$, any predicted bounding box with confidence score lower than 0.2 or overlap lower than 0.5 with any ground-truth bounding boxes will be removed. In this example, one of the predicted cars is 68\% offset from its truth location, hence being removed. Thus the predicted labels and ground-truth labels are mapped one to one as follows:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{rcccc}
+    ground-truth labels         & car  & car  & car  & human \\ \hline
+    predicted labels            & car  & none & none & human
+    \end{tabular}
+\end{table}
+
+\noindent Please note that the correspondence between predicted and truth labels will change based on different IoU and confidence thresholds. For example, if the IoU threshold ($t_{IoU}$) is set to 0.7, the model will only recognize the first car and ignore all other objects (samples). Similarly, if the confidence threshold ($t_{confidence}$) is set to 0.8, the model won't be able to detect any ground-truth samples.
+
+The mapping between the predicted and ground-truth labels offers insight into the model's ability to detect and classify samples at a particular confidence and IoU threshold. We can quantify this insight using a confusion matrix, a 2 x 2 matrix that assesses the object detection model's performance in distinguishing between two categories \cite{confusion_matrix_2017}. Since the confusion matrix assumes that there are only two categories, when multiple categories are in the mapping, each category will have its unique confusion matrix. In other words, for each category, the confusion matrix measures the model's ability to differentiate between samples belonging to this category and those that do not. The confusion matrix comprises four different combinations of predicted and ground-truth labels, as shown:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cc|cc|}
+    \cline{3-4}
+                                                        &          & \multicolumn{2}{c|}{Predicted}                                 \\ \cline{3-4} 
+                                                        &          & \multicolumn{1}{c|}{Negative}            & Positive            \\ \hline
+    \multicolumn{1}{|c|}{\multirow{2}{*}{Ground-Truth}} & Negative & \multicolumn{1}{c|}{True Negative (TN)}  & False Positive (FP) \\ \cline{2-4} 
+    \multicolumn{1}{|c|}{}                              & Positive & \multicolumn{1}{c|}{False Negative (FN)} & True Positive (TP)  \\ \hline
+    \end{tabular}
+\end{table}
+
+The \textbf{true negative (TN)} represents the count of times the model correctly recognizes a sample not belonging to a specific class. On the other hand, the \textbf{false negative (FN)} represents the number of ground-truth samples where the model fails to detect an object of this class at that position. The \textbf{false positive (FP)} is the count of samples that the model identifies as objects of this class at that position where there is no object. Lastly, the \textbf{true positive (TP)} denotes the number of ground-truth samples accurately recognized by the model. Consider Example \ref{ex:truth_pred_score_map}. Since we have two classes, we will have a confusion matrix for each class. Take the car class, for example, then:
+\begin{itemize}
+    \item True negative: The number of times the model \emph{correctly} classifies \emph{a none-car object as not a car}.
+    \item False negative: The number of times the model \emph{incorrectly} classifies \emph{a car object as not a car}.
+    \item False positive: The number of times the model \emph{incorrectly} classifies \emph{a none-car object as a car}.
+    \item True positive: The number of times the model \emph{correctly} classifies \emph{a car object as a car}.
+\end{itemize}
+By utilizing these definitions, we can create the confusion matrix for the car class and, similarly, for the human class, with thresholds $t_{IoU}=0.5$ and $t_{confidence}=0.2$ as follow:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cccc}
+        \multicolumn{4}{c}{Confusion Matrix for Car Class} \\ \cline{3-4} 
+                                                                                                          & \multicolumn{1}{c|}{}         & \multicolumn{2}{c|}{Predicted}                                \\ \cline{3-4} 
+                                                                                                          & \multicolumn{1}{c|}{}         & \multicolumn{1}{c|}{Negative} & \multicolumn{1}{c|}{Positive} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Ground\\ Truth\end{tabular}}}     & \multicolumn{1}{c|}{Negative} & \multicolumn{1}{c|}{1}        & \multicolumn{1}{c|}{0}        \\ \cline{2-4} 
+        \multicolumn{1}{|c|}{}                                                                            & \multicolumn{1}{c|}{Positive} & \multicolumn{1}{c|}{2}        & \multicolumn{1}{c|}{1}        \\ \hline
+    \end{tabular}
+    \qquad
+    \begin{tabular}{cccc}
+        \multicolumn{4}{c}{Confusion Matrix for Human Class}                                                                                                                                              \\ \cline{3-4} 
+                                                                                                          & \multicolumn{1}{c|}{}         & \multicolumn{2}{c|}{Predicted}                                \\ \cline{3-4} 
+                                                                                                          & \multicolumn{1}{c|}{}         & \multicolumn{1}{c|}{Negative} & \multicolumn{1}{c|}{Positive} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Ground\\ Truth\end{tabular}}}     & \multicolumn{1}{c|}{Negative} & \multicolumn{1}{c|}{3}        & \multicolumn{1}{c|}{0}        \\ \cline{2-4} 
+        \multicolumn{1}{|c|}{}                                                                            & \multicolumn{1}{c|}{Positive} & \multicolumn{1}{c|}{0}        & \multicolumn{1}{c|}{1}        \\ \hline
+    \end{tabular}
+\end{table}
+
+With the confusion matrix, we can assess the overall object detection model's performance at a particular threshold by computing the accuracy, precision, and recall metrics. First, the \textbf{accuracy (ACC) metric} describes how the model performs in detecting and classifying samples of all known classes. It is determined by dividing the number of correct detections by the total number of predictions made \cite{szeliski_cv_book}, as follows:
+\begin{equation}
+    ACC = \frac{TN+TP}{TN+FN+TP+FP} \label{eq:accuracy}
+\end{equation}
+However, the accuracy (ACC) metric is only meaningful when all classes are equally important and the input data has an approximately equal number of samples belonging to each class. The ACC metric can be misleading when some specific classes dominate the input data. For example, suppose a model processes an image of 495 cars and 5 humans. If the model classifies all 500 detections as cars, then the ACC be $\frac{0+495}{0+0+495+5}=0.99$. This result indicates that the model is 99\% correct in detecting the presence of cars and humans, even though it was unable to detect any humans.
+
+An alternative metric that can be utilized is precision. \textbf{Precision metric} assesses the dependability of the model in identifying a detection as positive for a specific class \cite{metrics_survey_2020}. Unlike ACC, precision assesses the model's reliability in classifying a particular class rather than across all classes. Thus, the precision performance of the model is different for each class at a given threshold. Precision is defined in the range of $[0,1]$  as:
+\begin{equation}
+    Precision = \frac{TP}{TP+FP} \label{eq:precision}
+\end{equation}
+A precision score of 0 signifies that all samples identified by the model as belonging to this particular class are incorrect, while a score of 1 indicates that all predictions for this class are accurate. However, precision does not reflect instances where the model fails to identify some samples of this class. Take the car class in Table \ref{ex:truth_pred_score_map} as an example. The precision score for this class is $\frac{1}{1+0}=1$, indicating that when the model predicts a sample as a car, the ground-truth label for that sample is indeed a car 100\% of the time. However, it is worth noting that the precision score does not factor in the two cars that the model missed in our example.
+
+As previously stated, precision only measures the correctness of detections but not the model's ability to detect all samples of a particular class. \textbf{Recall metric} are often utilized in conjunction with precision to overcome this limitation. The recall is mathematically defined in the range of $[0,1]$ as:
+\begin{equation}
+    Recall = \frac{TP}{TP+FN} \label{eq:recall}
+\end{equation}
+A value of 0 denotes that the model has missed identifying all ground-truth samples belonging to this class, while a value of 1 indicates that the model has detected all ground-truth samples of this class \cite{metrics_survey_2020}. However, similar to other metrics, recall is not flawless, as it does not account for instances where the model classifies all negative samples as belonging to this class. For instance, consider the car class in Table \ref{ex:truth_pred_score_map}. If our model predicts all ground-truth samples as belonging to the car class, the car class's recall is $\frac{3}{3+0}=1$, suggesting that the model can identify all ground-truth cars. However, as illustrated, the recall value fails to account for the model's misclassification of a non-car object as a car. This error can be detected by the false positive (FP) term in the precision metric. Therefore, precision and recall are typically used together to evaluate an object detection model.
+
+Using the definition of precision and recall, we noted that the two metrics measure the model's accuracy in classifying objects of a particular class at a particular confidence threshold $t_{confidence}$. We denote objects belonging to this class referred to as positive samples, while those that do not belong are negative samples. Based on Equation \ref{eq:precision}, we can see that as the precision approaches 1, the true positive (TP) term increase while the false positive (FP) term decrease. This implies that the model becomes more confident in classifying a sample as positive as precision increases. On the other hand, Equation \ref{eq:recall} shows that as the true positive (TP) term increases and the false negative (FN) term decreases, the recall approaches 1. This indicates that a higher recall value means the model identifies more samples as positive. 
+
+As it might be seen, there is a tradeoff between precision and recall. Suppose we establish a high $t_{confidence}$ value for the model and only classify a sample as positive when its confidence score surpasses this threshold. In this case, the model may miss multiple ground-truth positive samples, resulting in high precision but low recall. Conversely, suppose we set a low $t_{confidence}$ value; then, the model may classify most samples as positive, even those that are incorrectly classified, resulting in the model having low precision but high recall. Nonetheless, an object detector is deemed as high performance at a particular IoU threshold if its precision remains high as its recall increases \cite{metrics_survey_2020}. Since the model's precision and recall vary depending on the confidence threshold $t_{confidence}$, we can calculate both metrics for each threshold value to examine the tradeoff between optimizing for one over the other. These computed metric values can be plotted on a two-dimensional plane to visualize the tradeoff, also known as the \textbf{precision-recall curve}. Figure \ref{fig:precision-recall_curve} shows examples of the precision-recall curve for a dataset and how the curve change at different IoU threshold value.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=5.5in]{figures/precision_recall_curve.png}
+    \caption{\textbf{(a)} The precision-recall curve for a single class at the IoU threshold of 0.5 for a dataset. \textbf{(b, c)} the same precision-recall curve as (a) but with IoU threshold of 0.7 and 0.9, respectively. \cite{szeliski_cv_book}} 
+    \label{fig:precision-recall_curve}
+\end{figure}
+
+Optimizing a model for precision or recall, similar to choosing an IoU threshold value, heavily depends on the task the model tries to complete. If the model is used for a high-accuracy and detailed task, such as surgery, it should be optimized for precision metrics. On the other hand, if the task is more focused on catching as many instances as possible, such as low-cost home-based cancer diagnosis, the model should be optimized for recall. In cases where both precision and recall are equally important, we can determine the optimal combination of the two metrics by comparing their F-scores at different confidence thresholds. The F-score is the harmonic mean, a type of numerical average, of the precision and recall metrics \cite{fscore_2017}. For each pair of precision and recall, the F-score can be calculated as follows:
+\begin{equation}
+    \text{F-score} = 2 \times \frac{Precision \times Recall}{Precision + Recall}
+\end{equation}
+Given that the F-score is the harmonic mean of precision and recall metrics for a specific class at a confidence threshold $t_{confidence}$, comparing the F-score at different $t_{confidence}$ value help determine the optimal combination of precision and recall. The highest F-score obtained represents this optimal combination, allowing us to select the ideal confidence threshold value.
+
+Another metric that can be used to evaluate the performance of a model for each class is the average precision (AP). While the F-score describes the confidence threshold value at which the model achieves the highest performance for a particular class, the average precision (AP) summarizes the model's performance across various confidence thresholds for that class. In other words, the AP condenses the precision-recall curve for a specific class into a single value representing the average of all precisions. The AP is an estimate of the area under the precision-recall curve. There are different versions of AP; the adopted version for PASCAL VOC and COCO benchmark is the N-point interpolation AP \cite{n_point_interpolation_ap}. Let $P$ and $R$ denote precision and recall, respectively. The N-point interpolation AP is defined as follows:
+\begin{equation}
+    AP_N = \frac{1}{N} \sum_{R \in \mathbb{R}_N} P_{interp}(R) \qquad with \qquad P_{interp}(R) = \max_{{R}':{R}' \geq R} P({R}')
+\end{equation}
+where the set of $N$ interpolation $\mathbb{R}_N$ is $\left\{0, \frac{1}{N}, \frac{2}{N}, ..., \frac{N}{N}\right\}$. The term $P({R}')$ is the value of precision at recall ${R}'$. The condition $\max_{{R}':{R}' \geq R}$ implies that the $P_{interp}(R)$ is the highest precision value among all recall point ${R}'$ that are larger than $R$, instead of being the precision observed at the recall $R$ \cite{n_point_interpolation_ap}. As an example, consider using 11-point interpolation to the precision-recall curve shown in Figure \ref{fig:11AP_ex}. With this precision-recall curve, the 11-point interpolation AP is:
+\begin{equation*}
+    AP_{11} = \frac{1}{11} (1+0.666+3 \times 0.428 + 6 \times 0) \approx 26.818\% 
+\end{equation*}
+We noted that instead of using the precision value at each recall in $\left\{0, \frac{1}{10}, \frac{2}{10}, ..., \frac{10}{10}\right\}$, the $AP_{11}$ use the maximum precision value of all the remaining recall points.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=4in]{figures/11AP_ex.png}
+    \caption{Applied 11-point interpolation method on the precision-recall curve \cite{metrics_survey_2020}}
+    \label{fig:11AP_ex}
+\end{figure}
+
+The mean average precision (mAP) of a class can be calculated using the average precision (AP) for that class at a specified IoU threshold. The mAP quantifies the model's accuracy in detecting objects of all classes above a particular IoU threshold. Let $K$ be the number of classes our model able to predict object for, then mAP is defined as follows:
+\begin{equation}
+    mAP = \frac{1}{K} \sum_{i=1}^{i=K}AP_i
+\end{equation}
+where $AP_i$ is the average precision value of the $i$th class.

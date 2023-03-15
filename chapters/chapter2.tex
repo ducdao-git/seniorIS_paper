@@ -1,50 +1,33 @@
 %!TEX root = ../username.tex
-\chapter{Instance Segmentation} \label{chap:instance_segmentation}
+\chapter{Instance Segmentation And Evaluation Metrics} \label{chap:segmentation_metric}
 
-An instance segmentation task is a computer vision task that involves
-determining the boundaries and identities of individual objects within an image
-or video. Unlike semantic segmentation, which classifies each pixel in an image
-as belonging to a particular class, instance segmentation assigns a unique
-label to each object in a scene and then identifies its boundaries. For
-example, in a picture of two vehicles one after another on the street, instance
-segmentation would be able to distinguish between the two vehicles by assigning
-them different labels and draw bounding box around them. 
+The field of computer vision aims to enable machines the ability to comprehend and derive meaning from visual scenes. This field comprises several tasks for processing images and videos, including but not limited to image classification, object detection, semantic segmentation, and instance segmentation \cite{overview_cv_task}. However, for the purpose of our study, we will focus specifically on object detection and instance segmentation. In this section, we will define these two tasks, then compare them with related tasks such as image classification and semantic segmentation. Followed by a discussion of the metrics used to evaluate object detection and instance segmentation models.
 
-The main distinction between instance segmentation and semantic segmentation
-lies in the level of detail they provide. While semantic segmentation will
-divide an image into classes such as "vehicle" or "animal", instance
-segmentation will offer more details by distinguishing between each individual
-object within those classes. It does this by assigning a unique label to each
-object for identification. This means that with instance segmentation, it's
-possible to identify not only what type of thing is present within an image but
-also where it is located and how many there are - something semantic
-segmentation cannot do on its own. 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=4in]{figures/diff_cv_tasks.jpeg}
+    \caption{Different Computer Vision Tasks \cite{diff_detection_segmentation_task_fig}}
+    \label{fig:diff_cv_tasks}
+\end{figure}
 
-On the other hand, instance segmentation and object dectection are quite
-similar on a high level. Upon comparing instance segmentation with object
-detection tasks reveals some further distinctions between the two tasks. While
-both involve locating objects within an image or video stream, object detection
-focuses on providing information about the location of the detected objects
-while instance segmentation goes further by identifying their outlines as well
-as providing additional information about them like the object size.
-Additionally, whereas object detection is used to detect multiple types of
-objects within one scene, instance segmentation is more focused on identifying
-individual instances within one specific type of object (e.g., two cars).
+We begin with image classification, the most fundamental task in the computer vision field. The task involves assigning an object category label to an input image, assuming the input image contains exactly one object \cite{overview_cv_task}. This implies that the task allows the object classification label to be given to the entire image without specifying where the object is. As shown in Figure \ref{fig:diff_cv_tasks}a, the image classification model predicts the probability that the image shows a sheep, a horse, a cat, or a dog. Although image classification is comparatively simpler than other computer vision tasks, it presents several significant challenges due to the variability of image appearance caused by changes in scale, orientation, lighting, occlusions, and other factors.
 
-By the definition of instance segmentation task, we known that any algorithm
-which goal is to complete this task must do two things. First, the algorithm
-must detect the location of the object, draw a bounding box srounding the
-object and the outline of the object. Secondly, the algorithm must be able to
-identify the class of the object resign inside the bouding box we draw from
-previous step. The algorithm must also aware the number of instance in this
-class at the second step.
+The second task is semantic segmentation. In contrast to image classification, semantic segmentation is unconcerned with the presence or absence of objects in the input image. The objective of the task is to classify each pixel of the input image into one of several predefined classes or categories \cite{overview_cv_task}. By classifying each pixel, the task generates a detailed mapping between image pixels and classes that can be used to locate and outline objects of different classes within the image. However, when classifying each pixel without consideration of object location, the task removes the depth dimension of the image. That is, if two objects of the same class are positioned behind one another, then the semantic segmentation model will consider them as one object of this class, thus losing dimension information. Considering Figure \ref{fig:diff_cv_tasks}b, we noted the three sheep are at different locations in the depth dimension, but the semantic segmentation mask visualizes these sheep as one object in 2-dimensional space.
 
-From section \ref{sec:cnn}, we have discussed about the structure and building
-block of a convolutional neural networks (CNNs). Throgh the discussion we also
-state how CNNs able to classify object in image classification task. However,
-by the definition of image classification task, the task assume the image have
-exactly one object and the algorithm will classify the class for entire image
-based on that one object. Therefore, we know that if we were to consider each
-bouding box as it own image, we can utilize a CNN to identify the class of the
-object within the bounding box. This is the main idea behind defferent
-variation of R-CNN for instance segmentation and objectt detection task. 
+The third task is object detection, an improvement over image classification. The goal of object detection models is to locate and categorize each object within a given image \cite{overview_cv_task}. The process of object detection involves two main subtasks: object localization and object classification. Object localization determines the location and size of each object in an image by predicting a bounding box around the object. Once the object is localized, it can be classified using an image classification model. Compared to semantic segmentation, object detection retains all spatial information of the object in the image but loses the pixel accuracy mask. This is illustrated in Figures \ref{fig:diff_cv_tasks}c and \ref{fig:diff_cv_tasks}d, where object detection is able to detect all three sheep, but it is unclear whether a pixel within the bounding box refers to the sheep or the grass behind it.
+
+The last task we want to discuss is instance segmentation. For every object in a given image or video frame, the instance segmentation model must identify all pixels belonging to the object and assign a category label to the object \cite{overview_cv_task}. Identifying all pixels that belong to the object creates the object's mask, which may then be used to locate pixel-precise locations and the object's outline. While object detection and instance segmentation involve locating objects, the former offers information about the location and scale of the detected objects, whereas the latter goes further by identifying all pixels associated with the object. On the other hand, the main distinction between instance and semantic segmentation lies in the level of detail they provide. While semantic segmentation divides an image into classes such as "vehicle" or "animal", instance segmentation provides more details by distinguishing between each individual object within those classes. It accomplishes this by assigning each object a unique label for identification. This means that instance segmentation can determine not only the class of each object in an image but also where it is located and how many there are - something semantic segmentation cannot achieve on its own. Considering Figure \ref{fig:diff_cv_tasks}, we observed that instance segmentation creates a pixel-accurate outline of all four animals, in contrast to the bounding box generated by object detection. In addition, the instance segmentation model's pixel-by-pixel mask must differentiate between the three sheep in contrast to semantic segmentation. In other words, the instance segmentation model combines object detection and semantic segmentation strengths while eliminating their weaknesses.
+
+
+% Unlike semantic segmentation, which classifies each pixel in an image as belonging to a particular class, instance segmentation assigns a unique label to each object in a scene and then identifies its boundaries. For example, in a picture of two vehicles one after another on the street, instance segmentation distinguishes between the two vehicles by assigning them different labels and drawing a bounding box around them.
+
+% The main distinction between instance and semantic segmentation lies in the level of detail they provide. While semantic segmentation divides an image into classes such as "vehicle" or "animal", instance segmentation provides more details by distinguishing between each individual object within those classes. It does this by assigning a unique label to each object for identification. This means that instance segmentation identifies not only what type of thing is present within an image but also where it is located and how many there are - something semantic segmentation cannot do on its own.
+
+% However, instance segmentation and object detection are similar on a high level. Comparing instance segmentation with object detection tasks reveals further distinctions between the two tasks. While both involve locating objects within an image or video stream, object detection focuses on providing information about the location of the detected objects, while instance segmentation goes further by identifying their outlines as well as providing additional information about them, like the object size. Additionally, whereas object detection is used to detect multiple types of objects within one scene, instance segmentation is more focused on identifying individual instances within one specific type of object (e.g., two cars).
+
+% According to the instance segmentation task definition, any model intending to complete this task must do two things. The model must first detect the object's location and draw a bounding box around it. Second, the model must determine the class of the object resigned within the bounding box defined in the previous step. In the second step, the model must also be aware of the number of instances for each class.
+
+% In section \ref{sec:cnn}, we discussed the structure and building blocks of convolutional neural networks (CNNs). We also stated how CNNs classify objects in the image classification task in the discussion. However,  the image classification task assumes the image has exactly one object, and the model classifies the entire image based on that one object. Therefore, if we consider each bounding box as its own image, we can utilize a CNN to identify the object's class within the bounding box. This is the main idea behind the different variations of R-CNN, which is designed for object detection and instance segmentation task.  
+R-CNN and YOLO are two popular families of models used for object detection and instance segmentation. In Sections 3 and 4, we will delve into the variations of R-CNN and YOLO, respectively. However, before we proceed, it is essential to understand the metrics used for assessing the performance of an object detection or instance segmentation model. In the next subsection, we will discuss the metrics utilized for evaluating these models.
+
+\input{chapters/chapter2/metrics.tex}

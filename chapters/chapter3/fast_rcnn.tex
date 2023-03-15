@@ -27,13 +27,13 @@ The overall architecture of Fast R-CNN can be thought of as four stages [Fig. \r
 
 \begin{figure}[!ht]
     \centering
-    \subfloat[][R-CNN architecture with stages \cite{rcnn_vs_faster_custom_fig}]{ 
+    \subfloat[][R-CNN architecture with stages]{ 
         \includegraphics[height=2in]{figures/rcnn_custom_draw.png} \label{fig:rcnn_custom_draw} 
     }
-    \subfloat[][Fast R-CNN architecture with stages \cite{rcnn_vs_faster_custom_fig}]{ 
+    \subfloat[][Fast R-CNN architecture with stages]{ 
         \includegraphics[height=2in]{figures/fast_rcnn_custom_draw.png} \label{fig:fast_rcnn_custom_draw} 
     }
-    \caption{R-CNN vs. Fast R-CNN architecture comparision} \label{fig:rcnn_vs_fast}
+    \caption{R-CNN vs. Fast R-CNN architecture comparision \cite{rcnn_vs_faster_custom_fig}} \label{fig:rcnn_vs_fast}
 \end{figure}
 
 Comparing the architecture of R-CNN and Fast R-CNN, there are three main differences between the two models [Fig. \ref{fig:rcnn_vs_fast}]. The first difference is that Fast R-CNN generates the feature map for the entire input image instead of each RoI individually. This means Fast R-CNN only applies CNN to image one and shares the feature maps across RoIs. Fast R-CNN behavior holds several advantages compared to treating RoIs individually, like in the R-CNN model. These advantages are reducing the use of disk storage, reducing redundancy operation performed on overlapping RoI, and sharing computation power and memory used between RoIs in the same image, thus improving the performance at test-time \cite{fast_rcnn_og}. Sharing the feature map and memory data between RoIs also allows the model to be trained faster. The author reported that training Fast R-CNN by examining multiple RoIs in an image allows the model to convert roughly 64 times faster compared to when trained with RoIs from different images. 
