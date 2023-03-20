@@ -39,6 +39,7 @@ Recall the RoIPool layer from Fast R-CNN, the layer is responsible for mapping p
 \end{figure}
 
 Similar to RoIPool, RoIAlign is a layer that aligns a proposed RoI onto a feature map and downsamples the feature map RoI to a pre-defined size. However, RoIAlign does not have the quantization issue that RoIPool has because it uses max-pooling on the bilinear interpolation value of four regularly spaced points in each RoI bin rather than the feature map pixel value. This means that RoIAlign does not need to use complete pixels to perform the max-pool operation, eliminating the need for quantization. To achieve this, RoIAlign divides the feature map RoI into a grid of equal-sized RoI bins and calculates the location of the four regularly spaced points in each RoI bin. The number of RoI bins along the width and height of the RoI feature map is pre-defined by the input size requirement of the next layer in the network. With the calculated RoI bins, the four regularly spaced points are located at $(\frac{W}{3}, \frac{H}{3})$, $(\frac{2 \times W}{3}, \frac{H}{3})$, $(\frac{W}{3}, \frac{2 \times H}{3})$, and $(\frac{2 \times W}{3}, \frac{2 \times H}{3})$ in each RoI bin, where $W \times H$ be the size of the RoI bin [Fig. \ref{fig:bin_w_regularly_points}]. Bilinear interpolation is then used to calculate the value of each point based on the four nearest feature map pixels. {\color{red} Since our regularly spaced points are in a grid of square pixels, thus our four nearest feature map pixels will create four pairs that either have the same $x$ coordinate or the same $y$ coordinate}. Let the four nearest feature map pixels to a regularly spaced point $P$ at $(x, y)$ are $Q_{11},\ Q_{21},\ Q_{12},\ Q_{22}$ at $(x_1, y_1),\ (x_2, y_1),\ (x_1, y_2),\ (x_2, y_2)$, respectively, as shown in Figure \ref{fig:bin_w_regularly_points}. Then the bilinear interpolation value of point $P$ can be calculated based on linear interpolation over $x-$coordinate and then $y-$coordinate as follow:
+
 \leftskip1cm\relax
 \rightskip1cm\relax
 \noindent Let linear interpolation over $x-$coordinate be:
@@ -55,6 +56,7 @@ Similar to RoIPool, RoIAlign is a layer that aligns a proposed RoI onto a featur
 \end{align}
 \leftskip0cm\relax
 \rightskip0cm\relax
+
 \noindent Since bilinear interpolation technique is based on the value of the four nearest pixel and weight them accordingly based on their location relative to point $P$, it give RoIAlign a smooth way to estimate the value at point $P$ without shifting. Similarlly, the bilinear interpolation value for the other three regularly spaced points in each RoI bin are calculated. With the value of the four regularly spaced points, RoIAlign perform a max-pool operation on these points to choose a value represent the RoI bin. RoIAlign repeat this process for all RoI bins in the feature map RoI, thus result in a fixed predefine output matrix.
 
 \begin{figure}[!ht]
