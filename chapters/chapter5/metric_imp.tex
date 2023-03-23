@@ -10,12 +10,101 @@ Recall from Section \ref{sec:eval_metrics}, to evaluate the performance of an ob
 \end{enumerate}
 This section provides an overview of how we integrate metrics into our comparison software. Our comparison software focuses on assessing the performance of Mask R-CNN versus the YOLOv5 model in object detection tasks. Since the output of the two models is formatted to produce the same data structure, a list of PredictObject instances, we can further process their output in a similar manner. The following discussion will focus on evaluating the object detection performance of the Mask R-CNN model, unless otherwise specified. 
 
-\subsection{IoU Calculation}
+\subsection{Prediction and Ground-truth Ojbect IoU Calculation}
 
 As stated in Sections \ref{sec:nuimage} and \ref{sec:prep_models}, the ground-truth data is provided in the form of a list of TruthObject instances, whereas each model produces a list of PredictObject instances. It should be mentioned that each item in the TruthObject list represents an object present in the image, and the list is not ordered in any particular way. On the other hand, each instance in the PredictObject list represents an object detected by the model in the image and is sorted from the most confident detection to the least confident detection. It is important to note that there is no direct correspondence between the items in the two lists with respect to their location. Therefore, it is not possible to determine which PredictObject instance corresponds to the detection of a particular TruthObject instance.
 
-In order to map the elements in the PredictObject and TruthObject lists, we employ a greedy brute force algorithm implemented in the \inlcode{preds\_choose\_truths\_map} function in the \inlcode{src/metrics.py} module. This function takes in the two lists and produces a list of hashmaps, where each hashmap maps a PredictObject instance to a TruthObject instance and provides their corresponding Intersection over Union (IoU) value.
+In order to map the elements in the PredictObject and TruthObject lists, we employ a greedy brute force algorithm implemented in the \inlcode{preds\_choose\_truths\_map} function in the \inlcode{src/metrics.py} file. This function takes in the two lists and produces a list of hashmaps, where each hashmap maps a PredictObject instance to a TruthObject instance and provides their corresponding Intersection over Union (IoU) value. An example output of the \inlcode{preds\_choose\_truths\_map} function is as follows:
 
-The main idea behind the greedy mapping algorithm is to assign the PredictObject instance to the TruthObject instance with the highest IoU score among all available TruthObject instances. The greedy algorithm follows the following two steps. Firstly, for each instance in the PredictObject list, we calculate the IoU value between that instance and each available TruthObject instance. The IoU calculation between any PredictObject instance and TruthObject instance is straightforward as they both have their bounding box's top-left and bottom-right corner coordinates. These coordinates are used to calculate the intersection and union area between the two boxes, and then the IoU as shown in the \inlcode{get\_box\_iou} function in the \inlcode{src/metrics.py} module. Secondly, the PredictObject instance is mapped to the TruthObject instance that has the highest IoU score among all the available TruthObject instances. Then, this mapped TruthObject instance is marked as used or unavailable for subsequent instances in the PredictObject list.
+\begin{lstlisting}[language=json,firstnumber=1]
+[
+    {
+        "iou_score": 0.959472981564043,
+        "pred_obj": <PredictObject object at 0x299dee950>,
+        "truth_obj": <TruthObject object at 0x2f4359f50>
+    },
+    {
+        "iou_score": None,
+        "pred_obj": <PredictObject object at 0x292a48210>,
+        "truth_obj": None
+    },
+    {
+        "iou_score": None,
+        "pred_obj": None,
+        "truth_obj": <TruthObject object at 0x2f435a490>
+    }
+]
+\end{lstlisting}
 
-This greedy mapping scheme effectively achieves two goals. The first goal is to assign each PredictObject to a  TruthObject instance, one-to-one correspondence between the two lists. The second goal is to reduce the model's overall performance further when a high-confidence detection has a lower IoU score with its corresponding ground-truth object compared to when a low-confidence detection has the same IoU score with its corresponding ground-truth object. By allowing the high-confidence PredictObject instances to choose their mapping first, the lower-confidence PredictObject instances will have fewer available TruthObject instances to choose from, forcing them to have a lower priority compared to the higher-confidence PredictObject instances.
+The main idea behind the greedy mapping algorithm is to assign the PredictObject instance to the TruthObject instance with the highest IoU score among all available TruthObject instances. The greedy algorithm follows the following two steps. Firstly, for each instance in the PredictObject list, we calculate the IoU value between that instance and each available TruthObject instance. The IoU calculation between any PredictObject instance and TruthObject instance is straightforward as they both have their bounding box's top-left and bottom-right corner coordinates. These coordinates are used to calculate the intersection and union area between the two boxes, and then the IoU as shown in the \inlcode{get\_box\_iou} function in the \inlcode{src/metrics} module. Secondly, the PredictObject instance is mapped to the TruthObject instance that has the highest IoU score among all the available TruthObject instances. Then, this mapped TruthObject instance is marked as used or unavailable for subsequent instances in the PredictObject list.
+
+This greedy mapping scheme effectively achieves two goals. The first goal is to assign each PredictObject to a  TruthObject instance if available. When the number of instances in the PredictObject list exceeds the number of instances in the TruthObject list, any additional PredictObject instances will be assigned a value of None, and vice versa. The second goal is to reduce the model's overall performance further when a high-confidence detection has a lower IoU score with its corresponding ground-truth object compared to when a low-confidence detection has the same IoU score with its corresponding ground-truth object. By allowing the high-confidence PredictObject instances to choose their mapping first, the lower-confidence PredictObject instances will have fewer available TruthObject instances to choose from, forcing them to have a lower priority compared to the higher-confidence PredictObject instances.
+
+\subsection{Confusion Matrix Generation}
+Using the mapping between the PredictObject and TruthObject lists, we can establish a label mapping between their classification labels, IoU, and confidence scores. This mapping consists of four lists: the ground-truth label list, the predicted label list, the confidence score list, and the IoU score list, similar to the representation in Table \ref{ex:truth_pred_score_map}. Each element in these lists corresponds to the element of the other list in terms of location. 
+
+The label mapping is then utilized to filter by IoU and confidence thresholds before generating the confusion matrix. In \inlcode{src/main.py} file, the \inlcode{IOU\_THRESHOLDS} variable defines a list of IoU thresholds to be filtered by, while the \inlcode{CONFIDENCE\_THRESHOLDS} variable defines a list of confidence thresholds. In case the IoU score between a pair of PredictObject and TruthObject instances is lower than the IoU threshold, the truth label associated with the TruthObject instance is converted to "none". This conversion ensures that we treat the low IoU score detection as a False Positive (FP) \cite{metrics_survey_2020}. Similarly, if the confidence score is below the confidence threshold, the predicted label corresponding to that PredictObject instance is set to "none". This effectively treats low confidence score detections as False Negatives (FN).
+
+The resulting filtered label map is then fed into the \inlcode{multilabel\_confusion\_matrix} function of the \inlcode{sklearn.metrics} module \cite{skm_multilabel_confusion_matrix}. This function takes in the ground-truth and predicted label lists as input. Additionally, since we have more than two categories in our two lists, we also need to provide a list of supported category labels to the function. The \inlcode{multilabel\_confusion\_matrix} function returns a list of confusion matrices, with each matrix corresponding to a label in the list of supported categories in terms of position. The current image's resulting hashmap will be included in the total hashmap of all processed images within the batch. This task is executed by the \inlcode{update\_lic\_cmatrix} function, which is implemented in the \inlcode{src/main\_utils.py} file. 
+
+Further explanation and an example of the filtering process and the generation of a confusion matrix are demonstrated in Subsections \ref{subsec:iou_conf_threshold} and \ref{subsec:confusion_matrix}. These processes are implemented in the \inlcode{multilabel\_cmatrix} function within the \inlcode{src/metrics.py} file. It should be noted that the model will have a unique confusion matrix for each categorized label at each IoU threshold and confidence threshold. Therefore, the \inlcode{multilabel\_cmatrix} function returns a three-level nested hashmap, where the key at each level is the label name, IoU threshold value, and confidence threshold value. The value of the most inner hashmap is a $2 \times 2$ confusion matrix. A sample output of the nested hashmap used to store confusion for a batch of images is:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "bicycle": {
+        0.5: {
+            0.65: [
+                [108, 7],
+                [8, 8]
+            ],
+            0.75: [...],
+            0.85: [...]
+        },
+        0.7: {...},
+        0.9: {...}
+    },
+    "bus": {...},
+    "car": {...},
+    "motorcycle": {...},
+    "person": {...},
+    "truck": {...}
+}
+\end{lstlisting}
+where the confusion matrix is stored in a hashmap first by label, then by IoU threshold values of 0.5, 0.7, and 0.9, and finally by confidence threshold values of 0.65, 0.75, and 0.85. The displayed confusion matrix is for the "bicycle" category at an IoU threshold $t_{IoU}=0.5$ and a confidence threshold $t_{confidence}=0.65$.
+
+\subsection{Accuracy, Precision, Recall, and F-score Calculation}
+In order to determine the accuracy (ACC), precision, recall, and F-score of a label at a specific IoU and confidence threshold, the corresponding confusion matrix, as stated in the previous subsection, is utilized.
+Recal from Section 9, these metrics can be computed with the following formulas: 
+\begin{align*}
+    \text{Precision} &= \frac{TP}{TP+FP}     &  \text{Recall} &= \frac{TP}{TP+FN} \\
+    \text{ACC} &= \frac{TN+TP}{TN+FN+TP+FP}  &  \text{F-score} &= 2 \times \frac{Precision \times Recall}{Precision + Recall}
+\end{align*}
+where the numerator of a metric equals 0, the metric will be assigned a value of 0. This is because all terms in the numerator are also used in the denominator. By assigning a value of 0 to the metric when the numerator is 0, regardless of the denominator, we can effectively avoid any instances of invalid division by 0. This serves as a sufficient condition for ensuring the metric remains valid in such edge cases.
+
+These metrics are implemented in \inlcode{calc\_accuracy}, \inlcode{calc\_precision}, \inlcode{calc\_recall}, and \inlcode{calc\_f1} functions in the \inlcode{src/metrics} module. Additionally, we also have the helper function \inlcode{calc\_aprf1}, implemented in the same module, which calls these four functions to calculate accuracy, precision, recall, and f-score for a given confusion matrix. After computing the four metrics for each confusion matrix, the F-score with the highest value for a particular IoU threshold can be determined by comparing the F-scores at all confidence thresholds within the corresponding IoU threshold hashmap. The highest F-score indicates the level of confidence at which the model achieves the best combination of precision and recall values. Note that since these metrics are computed for each confusion matrix, thus we will also have a three-level nested hashmap, similar to the nested hashmap used to store the confusion matrix. An example of the metric nested hashmap's output for a batch of images is:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "bus": {
+        0.5: {
+            0.65: {
+                "accuracy": 0.925,
+                "precision": 0.5,
+                "recall": 0.6666666666666666,
+                "f1": 0.5714285714285715
+            },
+            0.75: {...},
+            0.85: {...},
+            "highest_f1": 0.5714285714285715,
+            "highest_f1_at_conf": 0.75,
+        },
+        0.7: {...},
+        0.9: {...}
+    },
+    "car": {...},
+    "bicycle": {...},
+    "person": {...},
+    "motorcycle": {...},
+    "truck": {...}
+}
+\end{lstlisting}
+
+\subsection{Average Precision (AP) and Mean Average Precision (mAP) Calculation}

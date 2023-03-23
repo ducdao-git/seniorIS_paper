@@ -6,7 +6,15 @@ For our comparison, we utilized the pre-trained Mask R-CNN model for the COCO ch
 
 The \inlcode{maskrcnn\_resnet50\_fpn} function employs the Mask R-CNN model to predict four lists -- labels, confidence scores, bounding boxes, and masks -- for each image tensor. The elements in these four lists correspond to each other location-wise and provide information about the detected objects. The list of confidence scores is sorted from highest to lowest, and the order of the other three lists changes accordingly. For instance, the first element in the scores, labels, bounding boxes, and masks list describes the detected object that the model is most confident about among all detected objects. 
 
-To eliminate the need to maintain location correspondence between four lists, the PredictObject class, defined in \inlcode{src/predict\_obj.py}, is used. Each class instance represents a predicted object within the image and contains the object's label, confidence score, bounding box, and mask. Similar to the TruthObject, the PredictObject follows the OOP principle, enabling easy access to information without affecting program efficiency. Since the instances of this class are passed across functions as references rather than actual copies, their usage does not impact program efficiency, as documented in \cite{python3_docs}. Furthermore, since the model is pre-trained for the COCO challenge, which consists of 80 categories, we remove all objects with labels that are not in the supported labels set before creating the list of PredictObject instances. This ensures that the label comparison between the ground-truth and predicted labels is valid, and there is no need for label mapping since all the supported labels exist in the COCO challenge's label set.
+To eliminate the need to maintain location correspondence between four lists, the PredictObject class, defined in \inlcode{src/predict\_obj.py}, is used. Each class instance represents a predicted object within the image and contains the object's label, confidence score, bounding box, and mask, as demonstrated:
+\begin{lstlisting}[language=json,firstnumber=1]
+predict_object.PredictObject object at 0x299dee950 contains:
+    p_label: car
+    p_score: 0.959472981564043
+    p_bbox: [789.85, 483.3, 879.51, 554.54]
+    p_mask: [[[0, 0, ..., 0], ..., [0, 0, ..., 0]]]
+\end{lstlisting}
+Similar to the TruthObject, the PredictObject follows the OOP principle, enabling easy access to information without affecting program efficiency. Since the instances of this class are passed across functions as references rather than actual copies, their usage does not impact program efficiency, as documented in \cite{python3_docs}. Furthermore, since the model is pre-trained for the COCO challenge, which consists of 80 categories, we remove all objects with labels that are not in the supported labels set before creating the list of PredictObject instances. This ensures that the label comparison between the ground-truth and predicted labels is valid, and there is no need for label mapping since all the supported labels exist in the COCO challenge's label set.
 
 \subsection{YOLOv5 Preparation}
 
