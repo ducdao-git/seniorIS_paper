@@ -73,7 +73,7 @@ where the confusion matrix is stored in a hashmap first by label, then by IoU th
 
 \subsection{Accuracy, Precision, Recall, and F-score Calculation}
 In order to determine the accuracy (ACC), precision, recall, and F-score of a label at a specific IoU and confidence threshold, the corresponding confusion matrix, as stated in the previous subsection, is utilized.
-Recal from Section 9, these metrics can be computed with the following formulas: 
+Recal from Section \ref{sec:eval_metrics}, these metrics can be computed with the following formulas: 
 \begin{align*}
     \text{Precision} &= \frac{TP}{TP+FP}     &  \text{Recall} &= \frac{TP}{TP+FN} \\
     \text{ACC} &= \frac{TN+TP}{TN+FN+TP+FP}  &  \text{F-score} &= 2 \times \frac{Precision \times Recall}{Precision + Recall}
@@ -108,3 +108,16 @@ These metrics are implemented in \inlcode{calc\_accuracy}, \inlcode{calc\_precis
 \end{lstlisting}
 
 \subsection{Average Precision (AP) and Mean Average Precision (mAP) Calculation}
+As stated in Subsection \ref{subsec:ap_metric}, by computing the precision and recall metrics for each label at various combinations of IoU and confidence threshold, we can determine the Average Precision (AP) metric. This metric represents the model's performance in detecting objects of a particular class at a given IoU threshold. We adopt the N-point interpolation AP for our comparison, similar to the PASCAL VOC and COCO benchmarks. Recall that the formula for N-point interpolation AP is as follows:
+\begin{equation}
+    AP_N = \frac{1}{N} \sum_{R \in \mathbb{R}_N} P_{interp}(R) \qquad with \qquad P_{interp}(R) = \max_{{R}':{R}' \geq R} P({R}')
+\end{equation}
+where the set of $N$ interpolation $\mathbb{R}_N$ is $\left\{0, \frac{1}{N}, \frac{2}{N}, ..., \frac{N}{N}\right\}$. We also recall that the $P_{interp}(R)$ term is the highest precision value among all recall point ${R}'$ that are larger than $R$, instead of being the precision observed at the recall $R$, as stated in Subsection \ref{subsec:ap_metric}.
+
+The \inlcode{calc\_ap} function in the \inlcode{src/metrics} module is responsible for computing the AP metric. This function requires a list of precision and a list of recall, as well as the number of interpolation points $N$, as input parameters. It should be noted that the function assumes that the precision and recall lists have corresponding elements based on their index. To obtain the $P_{interp}(R)$ value, a simple yet effective algorithm is employed. The key concept of this algorithm is that the $P_{interp}(R)$ value will always be equal to the maximum precision value of all the subsequence precision points in the list at any given precision point. By traversing the precision list in reverse order, keeping track of the highest precision value encountered so far, and updating each precision value that is lower than the current highest precision, we can obtain the list of $P_{interp}(R)$ values in linear (O(1)) runtime. However, since we must interpolate N recall points equally spaced in the range [0, 1] for N-point interpolation, the interpolated recall points might not be present in the recall list. In this case, we will interpolate the smallest higher recall point. For instance, if we need to interpolate the recall value of 0.55, but our sorted recall list is [..., 0.5, 0.58, ...], then the $P_{interp}(0.55)$ value will be equal to $P_{interp}(0.58)$.
+
+Once the AP for each class label has been computed, calculating the mean Average Precision (mAP) is a simple process that involves applying the formula outlined in Subsection \ref{subsec:mean_ap_metric}. The formula can be expressed as:
+\begin{equation*}
+    mAP = \frac{1}{K} \sum_{i=1}^{i=K}AP_i
+\end{equation*}
+where $K$ be the number of catagory label, and $AP_i$ is the average precision value of the $i$th class.
