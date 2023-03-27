@@ -26,7 +26,7 @@ As an example, consider an image with 3 cars and 1 human. After processing the i
     \caption{Example's representation: Input image contains 3 cars and 1 human. The model predicts 2 cars and 1 human with respective confidence scores of 0.76, 0.72, and 0.58, and IoU scores of 0.89, 0.32, and 0.52} \label{ex:truth_pred_score_map}
 \end{table}
 
-Assuming the confidence threshold $t_{confidence}=0.6$, any predicted bounding box with confidence score lower than 0.2 will be removed. Additionally, assuming the IoU threshold $t_{IoU}=0.5$, then the truth bouding box with IoU score lower than 0.5 will be removed \cite{metrics_survey_2020}. In this example, one of the predicted car is 68\% offset from its truth location, hence the corresponding truth car label being removed. Thus the predicted labels and ground-truth labels are mapped one to one as follows:
+Assuming the confidence threshold $t_{confidence}=0.6$, any predicted bounding box with a confidence score lower than 0.2 will be removed. Additionally, assuming the IoU threshold $t_{IoU}=0.5$, then the truth bounding box with an IoU score lower than 0.5 will be removed \cite{metrics_survey_2020}. In this example, one of the predicted car is 68\% offset from its truth location, hence the corresponding truth car label being removed. Thus the predicted labels and ground-truth labels are mapped one to one as follows:
 \begin{table}[H]
     \centering
     \begin{tabular}{rcccc}
@@ -76,7 +76,7 @@ By utilizing these definitions, we can create the confusion matrix for the car c
         \multicolumn{1}{|c|}{}                                                                            & \multicolumn{1}{c|}{Positive} & \multicolumn{1}{c|}{1}        & \multicolumn{1}{c|}{0}        \\ \hline
     \end{tabular}
 \end{table}
-\noindent where in the car confusion matrix, FP$=1$ because ground-truth label is "none" while predicted label is "car", FN$=1$ because ground-truth label is "car" while predicted label is "none", and TN$=1$ because both ground-truth and predicted label ("human" and "none", respectively) are not "car".
+\noindent where in the car confusion matrix, FP$=1$ because the ground-truth label is "none" while the predicted label is "car", FN$=1$ because the ground-truth label is "car" while the predicted label is "none", and TN$=1$ because both ground-truth and predicted label ("human" and "none", respectively) are not "car".
 
 \subsection{Accuracy Metric}  \label{subsec:accuracy_metric}
 With the confusion matrix, we can assess the overall object detection model's performance at a particular threshold by computing the accuracy, precision, and recall metrics. First, the \textbf{accuracy (ACC) metric} describes how the model performs in detecting and classifying samples of all known classes. It is determined by dividing the number of correct detections by the total number of predictions made \cite{szeliski_cv_book}, as follows:
@@ -90,7 +90,7 @@ An alternative metric that can be utilized is precision. \textbf{Precision metri
 \begin{equation}
     Precision = \frac{TP}{TP+FP} \label{eq:precision}
 \end{equation}
-A precision score of 0 signifies that all samples identified by the model as belonging to this particular class are incorrect, while a score of 1 indicates that all predictions for this class are accurate. However, precision does not reflect instances where the model fails to identify some samples of this class. Take the car class in Table \ref{ex:truth_pred_score_map} as an example. Let assume the model correctly classify the seconf car as a car at a higher IoU value of 0.8, then the ground-truth and predicted labels correspondence map is:
+A precision score of 0 signifies that all samples identified by the model as belonging to this particular class are incorrect, while a score of 1 indicates that all predictions for this class are accurate. However, precision does not reflect instances where the model fails to identify some samples of this class. Take the car class in Table \ref{ex:truth_pred_score_map} as an example. Let's assume the model correctly classifies the second car as a car at a higher IoU value of 0.8, then the mapping between the ground-truth and predicted labels is:
 \begin{table}[H]
     \centering
     \begin{tabular}{rcccc}
@@ -124,7 +124,7 @@ Optimizing a model for precision or recall, similar to choosing an IoU threshold
 \begin{equation}
     \text{F-score} = 2 \times \frac{Precision \times Recall}{Precision + Recall}
 \end{equation}
-Given that the F-score is the harmonic mean of precision and recall metrics for a specific class at a confidence threshold $t_{confidence}$, comparing the F-score at different $t_{confidence}$ value help determine the optimal combination of precision and recall. The highest F-score obtained represents this optimal combination, allowing us to select the ideal confidence threshold value.
+Given that the F-score is the harmonic mean of precision and recall metrics for a specific class at a confidence threshold $t_{confidence}$, comparing the F-score at different $t_{confidence}$ values helps determine the optimal combination of precision and recall. The highest F-score obtained represents this optimal combination, allowing us to select the ideal confidence threshold value.
 
 \subsection{Average Precision (AP) Metric}  \label{subsec:ap_metric}
 Another metric that can be used to evaluate the performance of a model for each class is the average precision (AP). While the F-score describes the confidence threshold value at which the model achieves the highest performance for a particular class, the average precision (AP) summarizes the model's performance across various confidence thresholds for that class. In other words, the AP condenses the precision-recall curve for a specific class into a single value representing the average of all precisions. The AP is an estimate of the area under the precision-recall curve. There are different versions of AP; the adopted version for PASCAL VOC and COCO benchmark is the N-point interpolation AP \cite{n_point_interpolation_ap}. Let $P$ and $R$ denote precision and recall, respectively. The N-point interpolation AP is defined as follows:
@@ -145,7 +145,7 @@ We noted that instead of using the precision value at each recall in $\left\{0, 
 \end{figure}
 
 \subsection{Mean Average Precision (mAP) Metric}  \label{subsec:mean_ap_metric}
-The mean average precision (mAP) of a class can be calculated using the average precision (AP) for that class at a specified IoU threshold \cite{szeliski_cv_book}. The mAP quantifies the model's accuracy in detecting objects of all classes above a particular IoU threshold. Let $K$ be the number of classes our model able to predict object for, then mAP is defined as follows:
+The mean average precision (mAP) of a class can be calculated using the average precision (AP) for that class at a specified IoU threshold \cite{szeliski_cv_book}. The mAP quantifies the model's accuracy in detecting objects of all classes above a particular IoU threshold. Let $K$ be the number of classes our model is able to predict for, then mAP is defined as follows:
 \begin{equation}
     mAP = \frac{1}{K} \sum_{i=1}^{i=K}AP_i
 \end{equation}
