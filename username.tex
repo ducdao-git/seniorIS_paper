@@ -29,7 +29,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % use this declaration for the print version of your IS
-% \documentclass[12pt,code,palatino,picins,blacklinks,kaukecopyright,openright,twoside]{woosterthesis} % probably what most students would use
+%\documentclass[12pt,code,palatino,picins,blacklinks,kaukecopyright,openright,twoside]{woosterthesis} % probably what most students would use
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -121,11 +121,11 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \frontmatter
-% \maketitle
-% \ClearShipoutPicture
-% \clearpage\thispagestyle{empty}\null\clearpage
-% \disscopyright 
+\frontmatter
+\maketitle
+\ClearShipoutPicture
+\clearpage\thispagestyle{empty}\null\clearpage
+\disscopyright 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                                       
@@ -133,9 +133,9 @@
 %                                                                                       
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{abstract}
-% Put your abstract text here -- Duc
-% \end{abstract}
+\begin{abstract}
+Video segmentation is a type of deep learning algorithm that enables autonomous vehicles to perceive and interpret real-world scenes in real-time \cite{grigorescu_trasnea_cocias_macesanu_2020}. Since video footage comprises multiple static frames, a fast image segmentation algorithm can be utilized for video segmentation. Image segmentation is divided into two categories: instance segmentation and semantic segmentation. Instance segmentation is superior to semantic segmentation because it preserves the 3D spatial location of objects. Furthermore, an instance segmentation algorithm is an object detection algorithm that can generate a pixel-wise mask for each object instance \cite{overview_cv_task}. This paper discusses the fundamental components of two model families, R-CNN and YOLO, as well as the evaluation metrics and a comparison between a version of the R-CNN (Mask R-CNN) model and a version of the YOLO (YOLOv5) model.
+\end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                                       
@@ -143,7 +143,7 @@
 %                                                                                       
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \dedication{This work is dedicated to the future generations of Wooster students.}
+\dedication{This work is dedicated to the future generations of Wooster students.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -162,7 +162,7 @@
 %                                                                                       
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{vita} 
+\begin{vita} 
 % You talk about yourself and how you got to where you are now. There is a structured form for the Vita that can be used if you want, but I don't encourage it.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -191,19 +191,19 @@
 %
 %%%This is for any publications you might have.%%%%%
 
-% \begin{publist}  
-% \pubitem{\quad}
-% \pubitem{\quad}
-% \end{publist} 
+\begin{publist}  
+\pubitem{\quad}
+\pubitem{\quad}
+\end{publist} 
 
-% \begin{fieldsstudy} 
-%     \majorfield{Computer Science \& Mathematics}
-%     \specialization{Computer Vision}
-%     %\begin{studieslist}
-%    %\studyitem{Abstract Algebra}{Hampton}
-%    %\end{studieslist}
-%   \end{fieldsstudy}
-% \end{vita}
+\begin{fieldsstudy} 
+    \majorfield{Computer Science \& Mathematics}
+    \specialization{Computer Vision}
+    %\begin{studieslist}
+   %\studyitem{Abstract Algebra}{Hampton}
+   %\end{studieslist}
+  \end{fieldsstudy}
+\end{vita}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -212,9 +212,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% \cleardoublepage
-% \phantomsection
-% \addcontentsline{toc}{chapter}{Contents}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Contents}
 
 \tableofcontents
 % \listoffigures  %Use if you have a list of figures.
@@ -268,9 +268,10 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% This command forces all the bibliography references to be printed -- not just those that were explicitly cited in the text.  If you comment this out, the bibliography will only include cited references.
-% \nocite{*}
-\printbibliography[title=References,heading=bibintoc]  % load our Bibliography file
+% \nocite{*} % This command forces all the bibliography references to be printed -- not just 
+              % those that were explicitly cited in the text.  If you comment this out, the bibliography
+              % will only include cited references.
+\printbibliography[title=References,heading=bibintoc]% load our Bibliography file
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -315,5 +316,5 @@
 % The paper is standard laser copier paper and not of archival quality.
 % \end{colophon}}{}
 
-% \clearpage\thispagestyle{empty}\null\clearpage
+\clearpage\thispagestyle{empty}\null\clearpage
 \end{document}

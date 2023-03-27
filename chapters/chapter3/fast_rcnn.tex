@@ -52,11 +52,14 @@ These changes in architecture allow the Fast R-CNN model to achieve a processing
 \end{figure}
 
 As an example, assume that we are processing an input image of $512 \times 512$ with VGG16, and the first fully connected layer expects $3 \times 3$ as input [Fig. \ref{fig:roi_projection_ex}]. Consider the input RoI with the top left corner coordinate of $(292, 199)$ and the size of $145 \times 200$. As mentioned earlier, VGG16 has a scale-down factor of $32$ from the input image to the feature map space. With this information, we can compute the corresponding coordinate and size of the input RoI in the feature map as follows:
-\begin{align}
-    &\text{Feature map RoI corner coordinate: } &\left( \floor{\frac{292}{32}}, \floor{\frac{199}{32}} \right) \ \ &= \ \ \left( \floor{9.125}, \floor{6.21875} \right) \ \ &= \ \ (9, 6) \\
-    &\text{Feature map RoI size: } &\floor{\frac{200}{32}} \times \floor{\frac{145}{32}} \ \ &= \ \ \floor{6.25} \times \floor{4.53125} \ \ &= \ \ 6 \times 4
-\end{align}
-When projecting to the feature map space, Fast R-CNN offsets and resizes the original projected RoI (shown as the blue rectangle in Fig. \ref{fig:roi_projection_ex}) to align perfectly with $n$ feature map pixels (shown as the orange area in Fig. \ref{fig:roi_projection_ex}), where $n$ is the number of feature map pixels that can fit entirely within the original projected RoI. As shown in Fig. \ref{fig:roi_projection_ex}, we lose some pixels data (the white part inside the blue rectangle) and have additional noise data (the orange part outside the blue rectangle). Consider the quantization of the conner's vertical position at 6.21875 to 6 in feature map space. When we factor in the scaling of 32 times, this means our projected RoI is shifted by $(6.21875 - 6) \times 32 = 7$ pixels vertically compared to the input RoI in the original image space. Similarly, the projected RoI is offset by 4 pixels horizontally, and the quantization process results in a loss of $(0.25 + 0.53125) \times 32 = 25$ pixels during projection.
+
+Feature map RoI corner coordinate:
+$$ \left( \floor{\frac{292}{32}}, \floor{\frac{199}{32}} \right) \ \ = \ \ \left( \floor{9.125}, \floor{6.21875} \right) \ \ = \ \ (9, 6) $$
+
+Feature map RoI size: 
+$$ \floor{\frac{200}{32}} \times \floor{\frac{145}{32}} \ \ = \ \ \floor{6.25} \times \floor{4.53125} \ \ = \ \ 6 \times 4 $$
+
+\noindent When projecting to the feature map space, Fast R-CNN offsets and resizes the original projected RoI (shown as the blue rectangle in Fig. \ref{fig:roi_projection_ex}) to align perfectly with $n$ feature map pixels (shown as the orange area in Fig. \ref{fig:roi_projection_ex}), where $n$ is the number of feature map pixels that can fit entirely within the original projected RoI. As shown in Fig. \ref{fig:roi_projection_ex}, we lose some pixels data (the white part inside the blue rectangle) and have additional noise data (the orange part outside the blue rectangle). Consider the quantization of the conner's vertical position at 6.21875 to 6 in feature map space. When we factor in the scaling of 32 times, this means our projected RoI is shifted by $(6.21875 - 6) \times 32 = 7$ pixels vertically compared to the input RoI in the original image space. Similarly, the projected RoI is offset by 4 pixels horizontally, and the quantization process results in a loss of $(0.25 + 0.53125) \times 32 = 25$ pixels during projection.
 
 \begin{figure}[!ht]
     \centering
