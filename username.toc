@@ -1,0 +1,64 @@
+\begingroup \setlength \skip@ {.66\baselineskip }\vskip \skip@ \endgroup \hbox to \hsize {CHAPTER \hfil PAGE} 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Neural Network}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Feedforward Neural Network Architecture}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}The Network Structure }{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Forward Propagation}{8}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Error Evaluation}{10}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Gradient Descent}{12}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Backpropagation}{15}{subsection.2.1.5}%
+\contentsline {section}{\numberline {2.2}Convolutional Neural Network}{16}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Convolutional Layer}{17}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Pooling Layer}{19}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Aditional term}{20}{subsection.2.2.3}%
+\contentsline {chapter}{\numberline {3}Computer Vision Tasks And Evaluation Metrics}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Object Detection, Instance Segmentation, and Other Tasks}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Evaluation Metrics}{23}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Intersection over Union (IoU) Metric}{23}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}IoU Threshold and Confidence Threshold}{24}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Confusion Matrix}{26}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Accuracy Metric}{27}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Precision Metric}{28}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Recall Metric}{28}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Precision-Recall Curve}{29}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.8}F-score (F1-score) Metric}{30}{subsection.3.2.8}%
+\contentsline {subsection}{\numberline {3.2.9}Average Precision (AP) Metric}{30}{subsection.3.2.9}%
+\contentsline {subsection}{\numberline {3.2.10}Mean Average Precision (mAP) Metric}{32}{subsection.3.2.10}%
+\contentsline {chapter}{\numberline {4}R-CNN Variation}{34}{chapter.4}%
+\contentsline {section}{\numberline {4.1}R-CNN}{34}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}The First Module: Region Proposal}{35}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}The Second Module: Feature Extraction With CNN}{37}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}The Third Module: Classification With Pre-trained SVM}{39}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}R-CNN Result and Drawback}{40}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Fast R-CNN}{41}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Faster R-CNN}{47}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Region Proposal Network (RPN)}{48}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Training}{50}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Mask R-CNN}{51}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}The Backbone Convolutional Neural Network}{52}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}The RoIAlign Layer}{53}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}The Mask Branch}{56}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {5}YOLO Variation}{60}{chapter.5}%
+\contentsline {section}{\numberline {5.1}YOLOv1}{60}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Network Architecture}{61}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Bounding Box Generation}{62}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Training}{64}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}YOLO9000 (YOLOv2)}{65}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Accuracy Improvement}{65}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Runtime Improvement}{67}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}YOLOv3}{68}{section.5.3}%
+\contentsline {section}{\numberline {5.4}YOLOv5}{70}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Experiments: Mask R-CNN and YOLOv5 Comparision}{71}{chapter.6}%
+\contentsline {section}{\numberline {6.1}nuImages Dataset}{71}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Prepare Models for Comparision}{73}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Mask R-CNN Preparation}{73}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}YOLOv5 Preparation}{74}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Metric Implementation Detail}{74}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Prediction and Ground-truth Ojbect IoU Calculation}{75}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Confusion Matrix Generation}{77}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Accuracy, Precision, Recall, and F-score Calculation}{78}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Average Precision (AP) and Mean Average Precision (mAP) Calculation}{80}{subsection.6.3.4}%
+\contentsline {section}{\numberline {6.4}Experiment Result}{81}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Future Work}{85}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Conclusion}{86}{chapter.8}%
+\contentsline {chapter}{References}{87}{appendix*.47}%

@@ -71,6 +71,37 @@
       \field{pages}{437\bibrangedash 478}
       \range{pages}{42}
     \endentry
+    \entry{traditional_machine_learning}{book}{}
+      \name{author}{2}{}{%
+        {{hash=9dfd0135a5e80aa6d81cea2c10fb7f73}{%
+           family={Bishop},
+           familyi={B\bibinitperiod},
+           given={Christopher\bibnamedelima M},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d8299efb6248f430bb0c465c766ed702}{%
+           family={Nasrabadi},
+           familyi={N\bibinitperiod},
+           given={Nasser\bibnamedelima M},
+           giveni={N\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{777504ebb73f750912508fc1b666e109}
+      \strng{fullhash}{777504ebb73f750912508fc1b666e109}
+      \strng{bibnamehash}{777504ebb73f750912508fc1b666e109}
+      \strng{authorbibnamehash}{777504ebb73f750912508fc1b666e109}
+      \strng{authornamehash}{777504ebb73f750912508fc1b666e109}
+      \strng{authorfullhash}{777504ebb73f750912508fc1b666e109}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{4}
+      \field{title}{Pattern recognition and machine learning}
+      \field{volume}{4}
+      \field{year}{2006}
+    \endentry
     \entry{smoth_ap_metric_2020}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=9cfdbb87832f22734d1601a08280c077}{%
@@ -676,6 +707,46 @@
       \field{title}{Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification}
       \field{year}{2015}
     \endentry
+    \entry{dying_relu}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Kaiming},
+           giveni={K\bibinitperiod}}}%
+        {{hash=5e72bc22dbcf0984c6d113d280e36990}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiangyu},
+           giveni={X\bibinitperiod}}}%
+        {{hash=bb295293acacd54387339079ebbe4ead}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Shaoqing},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f85751488058842b5777c7b4074077b5}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{fullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \strng{bibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorbibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
+      \strng{authorfullhash}{42c4b52dc3a62cebabbc11c73e1afb53}
+      \field{extraname}{3}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE international conference on computer vision}
+      \field{title}{Delving deep into rectifiers: Surpassing human-level performance on imagenet classification}
+      \field{year}{2015}
+      \field{pages}{1026\bibrangedash 1034}
+      \range{pages}{9}
+    \endentry
     \entry{mask_rcnn_2017}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=6b4b60e909e78633945f3f9c9dc83e01}{%
@@ -705,7 +776,7 @@
       \strng{authorbibnamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
       \strng{authornamehash}{6edb98fe38401d2fe4a026f5ce6e8451}
       \strng{authorfullhash}{25317aa10282a4a31c271050ed66c455}
-      \field{extraname}{3}
+      \field{extraname}{4}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
@@ -832,6 +903,40 @@
       \field{year}{2022}
       \field{pages}{1066\bibrangedash 1073}
       \range{pages}{8}
+    \endentry
+    \entry{ai_data_driven}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8a36116840c7ee55901618c95fd08a58}{%
+           family={Jordan},
+           familyi={J\bibinitperiod},
+           given={Michael\bibnamedelima I},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=d331eeb7f00e650950ccadcb9c47efec}{%
+           family={Mitchell},
+           familyi={M\bibinitperiod},
+           given={Tom\bibnamedelima M},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{d3d8da60975e2b388cca53d2bd755d35}
+      \strng{fullhash}{d3d8da60975e2b388cca53d2bd755d35}
+      \strng{bibnamehash}{d3d8da60975e2b388cca53d2bd755d35}
+      \strng{authorbibnamehash}{d3d8da60975e2b388cca53d2bd755d35}
+      \strng{authornamehash}{d3d8da60975e2b388cca53d2bd755d35}
+      \strng{authorfullhash}{d3d8da60975e2b388cca53d2bd755d35}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{number}{6245}
+      \field{title}{Machine learning: Trends, perspectives, and prospects}
+      \field{volume}{349}
+      \field{year}{2015}
+      \field{pages}{255\bibrangedash 260}
+      \range{pages}{6}
     \endentry
     \entry{fscore_2017}{article}{}
       \name{author}{4}{}{%
