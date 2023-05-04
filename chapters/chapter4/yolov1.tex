@@ -42,16 +42,16 @@ Each bounding box is represented by 5 values: coordinate $x$, coordinate $y$, wi
         \includegraphics[height=2in]{figures/yolov1_bbox1.png} \label{fig:yolov1_bbox1}
     }
     \qquad \qquad
-    \subfloat[][{YOLOv1 predict a bounding boxes for $cell_{32}$ with $S=3$ and $B=2$}]{ 
+    \subfloat[][{YOLOv1 predict bounding boxes for $cell_{32}$ with $S=3$ and $B=2$}]{ 
         \includegraphics[height=2in]{figures/yolov1_bbox2.png} \label{fig:yolov1_bbox2}
     }
 \end{figure}
 
 As an example, consider processing an image with $S=3$, $B=1$, and classifying between two classes, human and dog ($C=2$), as demonstrated in Figure \ref{fig:yolov1_bbox1}. Since $B=1$, which means we only predict one bounding box per cell, then the cell$_{32}$ will return a tensor representing the predicted bounding box as:
-\begin{equation*}cell
+\begin{equation*}
 	cell's\ output = \begin{bmatrix}
         {\color{blue} x \quad y \quad w \quad h \quad conf} \quad p_{human} \quad p_{dog}
-        \end{bmatrix}
+    \end{bmatrix}
 \end{equation*}
 where $conf$ is the confidence score, $p_{human}$ and $p_{dog}$ are the probability that the object belongs to the human and dog class, respectively. Noted that when we only predict 1 bounding box per cell, the YOLOv1 model predicts $(4+1+2)$ values for each cell, where 4 values describe the bounding box location, 1 for confidence score, and 2 probability values with one for each class. Therefore we say that when $B=1$, the model predicts $(4+1+C)$ for each cell. 
 

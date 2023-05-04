@@ -147,7 +147,7 @@ We noted that instead of using the precision value at each recall in $\left\{0, 
 \subsection{Mean Average Precision (mAP) Metric}  \label{subsec:mean_ap_metric}
 The mean average precision (mAP) of a class can be calculated using the average precision (AP) for that class at a specified IoU threshold \cite{szeliski_cv_book}. The mAP quantifies the model's accuracy in detecting objects of all classes above a particular IoU threshold. Let $K$ be the number of classes our model is able to predict for, then mAP is defined as follows:
 \begin{equation}
-    mAP = \frac{1}{K} \sum_{i=1}^{i=K}AP_i
+    mAP = \frac{1}{K} \sum_{i=1}^{K}AP_i
 \end{equation}
 where $AP_i$ is the average precision value of the $i$th class.
 
